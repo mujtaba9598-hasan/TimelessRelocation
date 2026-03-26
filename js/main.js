@@ -1,282 +1,179 @@
-/* ============================================
-   TIMELESS RELOCATION - Main JavaScript
-   Modern, clean, performance-focused
-   ============================================ */
+/* ================================================
+   Timeless Relocation - Main JS
+   ================================================ */
+(function () {
+  'use strict';
 
-'use strict';
+  document.addEventListener('DOMContentLoaded', init);
 
-document.addEventListener('DOMContentLoaded', () => {
-
-  /* ------------------------------------------
-     Utility: ease-out cubic for smooth counters
-  ------------------------------------------ */
-  const easeOutCubic = (t) => 1 - Math.pow(1 - t, 3);
-
-  /* ------------------------------------------
-     Navbar - scroll effect + hide/show on direction
-  ------------------------------------------ */
-  const navbar = document.querySelector('.navbar');
-  let lastScrollY = 0;
-  let ticking = false;
-
-  const handleNavbarScroll = () => {
-    if (!navbar) return;
-    const currentY = window.scrollY;
-
-    // Add or remove scrolled class at threshold
-    navbar.classList.toggle('scrolled', currentY > 50);
-
-    // Hide on scroll down, show on scroll up
-    if (currentY > 200) {
-      if (currentY > lastScrollY + 5) {
-        navbar.classList.add('nav-hidden');
-      } else if (currentY < lastScrollY - 5) {
-        navbar.classList.remove('nav-hidden');
-      }
-    } else {
-      navbar.classList.remove('nav-hidden');
-    }
-
-    lastScrollY = currentY;
-    ticking = false;
-  };
-
-  if (navbar) {
-    window.addEventListener('scroll', () => {
-      if (!ticking) {
-        requestAnimationFrame(handleNavbarScroll);
-        ticking = true;
-      }
-    }, { passive: true });
+  function init() {
+    navScroll();
+    mobileMenu();
+    faqAccordion();
+    scrollReveal();
+    counterAnim();
+    // contactForm(); -- now handled by PHP email in contact.html
+    activeNav();
   }
 
-  /* ------------------------------------------
-     Mobile Menu - open / close / overlay
-  ------------------------------------------ */
-  const mobileToggle = document.querySelector('.mobile-toggle');
-  const mobileMenu = document.querySelector('.mobile-menu');
-  const mobileClose = document.querySelector('.mobile-menu-close');
-  const mobileOverlay = document.querySelector('.mobile-overlay');
+  /* --- Navbar: shadow on scroll, hide on scroll-down --- */
+  function navScroll() {
+    var nav = document.querySelector('.navbar');
+    if (!nav) return;
+    var last = 0, raf = false;
 
-  const openMobileMenu = () => {
-    mobileMenu?.classList.add('open');
-    if (mobileOverlay) {
-      mobileOverlay.style.display = 'block';
-      requestAnimationFrame(() => mobileOverlay.classList.add('open'));
+    function update() {
+      var y = window.scrollY;
+      nav.classList.toggle('scrolled', y > 40);
+      if (y > last && y > 180) nav.classList.add('nav-hidden');
+      else nav.classList.remove('nav-hidden');
+      last = y;
+      raf = false;
     }
-    document.body.style.overflow = 'hidden';
-  };
 
-  const closeMobileMenu = () => {
-    mobileMenu?.classList.remove('open');
-    if (mobileOverlay) {
-      mobileOverlay.classList.remove('open');
-      setTimeout(() => { mobileOverlay.style.display = 'none'; }, 300);
-    }
-    document.body.style.overflow = '';
-  };
-
-  mobileToggle?.addEventListener('click', openMobileMenu);
-  mobileClose?.addEventListener('click', closeMobileMenu);
-  mobileOverlay?.addEventListener('click', closeMobileMenu);
-
-  // Close on Escape key
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && mobileMenu?.classList.contains('open')) {
-      closeMobileMenu();
-    }
-  });
-
-  /* ------------------------------------------
-     Mobile Dropdown Toggles
-  ------------------------------------------ */
-  document.querySelectorAll('.mobile-dropdown-toggle').forEach((toggle) => {
-    toggle.addEventListener('click', (e) => {
-      e.preventDefault();
-      const items = toggle.nextElementSibling;
-      if (!items) return;
-
-      items.classList.toggle('open');
-      const arrow = toggle.querySelector('svg');
-      if (arrow) {
-        arrow.style.transform = items.classList.contains('open')
-          ? 'rotate(180deg)'
-          : 'rotate(0deg)';
-      }
+    window.addEventListener('scroll', function () {
+      if (!raf) { requestAnimationFrame(update); raf = true; }
     });
-  });
+  }
 
-  /* ------------------------------------------
-     FAQ Accordion
-  ------------------------------------------ */
-  const faqItems = document.querySelectorAll('.faq-item');
+  /* --- Mobile drawer --- */
+  function mobileMenu() {
+    var btn = document.querySelector('.hamburger');
+    var drawer = document.querySelector('.mobile-drawer');
+    var backdrop = document.querySelector('.mobile-backdrop');
+    var close = document.querySelector('.mobile-close');
+    var ddToggle = document.querySelector('.mobile-dd-toggle');
+    var ddList = document.querySelector('.mobile-dd-list');
 
-  faqItems.forEach((item) => {
-    const question = item.querySelector('.faq-question');
-    if (!question) return;
+    function open() {
+      if (btn) btn.classList.add('open');
+      if (drawer) drawer.classList.add('show');
+      if (backdrop) backdrop.classList.add('show');
+      document.body.style.overflow = 'hidden';
+    }
+    function shut() {
+      if (btn) btn.classList.remove('open');
+      if (drawer) drawer.classList.remove('show');
+      if (backdrop) backdrop.classList.remove('show');
+      document.body.style.overflow = '';
+    }
 
-    question.addEventListener('click', () => {
-      const wasOpen = item.classList.contains('open');
+    if (btn) btn.addEventListener('click', open);
+    if (close) close.addEventListener('click', shut);
+    if (backdrop) backdrop.addEventListener('click', shut);
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') shut(); });
 
-      // Close every item first
-      faqItems.forEach((i) => i.classList.remove('open'));
+    if (ddToggle && ddList) {
+      ddToggle.addEventListener('click', function () {
+        ddToggle.classList.toggle('open');
+        ddList.classList.toggle('open');
+      });
+    }
+  }
 
-      // Re-open if it was closed
-      if (!wasOpen) item.classList.add('open');
-    });
-  });
+  /* --- FAQ accordion --- */
+  function faqAccordion() {
+    var items = document.querySelectorAll('.faq-item');
+    items.forEach(function (item) {
+      var q = item.querySelector('.faq-q');
+      var a = item.querySelector('.faq-a');
+      if (!q || !a) return;
 
-  /* ------------------------------------------
-     Scroll Animations via Intersection Observer
-  ------------------------------------------ */
-  const animElements = document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right');
+      q.addEventListener('click', function () {
+        var wasOpen = item.classList.contains('open');
 
-  if (animElements.length && 'IntersectionObserver' in window) {
-    const animObserver = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            animObserver.unobserve(entry.target);
-          }
+        items.forEach(function (other) {
+          other.classList.remove('open');
+          var oa = other.querySelector('.faq-a');
+          if (oa) oa.style.maxHeight = null;
         });
-      },
-      { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
-    );
 
-    animElements.forEach((el) => animObserver.observe(el));
+        if (!wasOpen) {
+          item.classList.add('open');
+          a.style.maxHeight = a.scrollHeight + 'px';
+        }
+      });
+    });
   }
 
-  /* ------------------------------------------
-     Smooth Number Counter with Easing
-  ------------------------------------------ */
-  const counters = document.querySelectorAll('[data-count]');
+  /* --- Scroll reveal --- */
+  function scrollReveal() {
+    var els = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+    if (!els.length || !('IntersectionObserver' in window)) return;
 
-  const animateCounter = (counter) => {
-    const target = parseInt(counter.getAttribute('data-count'), 10);
-    const suffix = counter.getAttribute('data-suffix') || '';
-    const duration = 2000; // ms
-    let start = null;
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('shown');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -30px 0px' });
 
-    const step = (timestamp) => {
-      if (!start) start = timestamp;
-      const elapsed = timestamp - start;
-      const progress = Math.min(elapsed / duration, 1);
-      const easedProgress = easeOutCubic(progress);
-      const current = Math.floor(easedProgress * target);
+    els.forEach(function (el) { observer.observe(el); });
+  }
 
-      counter.textContent = current + suffix;
+  /* --- Counter animation --- */
+  function counterAnim() {
+    var counters = document.querySelectorAll('[data-count]');
+    if (!counters.length || !('IntersectionObserver' in window)) return;
 
-      if (progress < 1) {
-        requestAnimationFrame(step);
-      } else {
-        counter.textContent = target + suffix;
+    function ease(t) { return 1 - Math.pow(1 - t, 3); }
+
+    function animate(el) {
+      var target = parseInt(el.getAttribute('data-count'), 10);
+      var suffix = el.getAttribute('data-suffix') || '';
+      var prefix = el.getAttribute('data-prefix') || '';
+      var dur = 2200, start = null;
+
+      function step(ts) {
+        if (!start) start = ts;
+        var p = Math.min((ts - start) / dur, 1);
+        el.textContent = prefix + Math.round(ease(p) * target) + suffix;
+        if (p < 1) requestAnimationFrame(step);
       }
-    };
+      requestAnimationFrame(step);
+    }
 
-    requestAnimationFrame(step);
-  };
+    var obs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { animate(e.target); obs.unobserve(e.target); }
+      });
+    }, { threshold: 0.4 });
 
-  if (counters.length && 'IntersectionObserver' in window) {
-    const counterObserver = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            animateCounter(entry.target);
-            counterObserver.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.5 }
-    );
-
-    counters.forEach((c) => counterObserver.observe(c));
+    counters.forEach(function (c) { obs.observe(c); });
   }
 
-  /* ------------------------------------------
-     Contact Form - sends data to WhatsApp
-  ------------------------------------------ */
-  const contactForm = document.getElementById('contactForm');
+  /* --- Contact form to WhatsApp --- */
+  function contactForm() {
+    var form = document.getElementById('contactForm');
+    if (!form) return;
 
-  if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
+    form.addEventListener('submit', function (e) {
       e.preventDefault();
-      const fd = new FormData(contactForm);
-      const name = fd.get('name') || '';
-      const phone = fd.get('phone') || '';
-      const email = fd.get('email') || '';
-      const service = fd.get('service') || '';
-      const message = fd.get('message') || '';
+      var get = function (n) { var el = form.querySelector('[name="' + n + '"]'); return el ? el.value : ''; };
 
-      let waMsg = `Hello Timeless Relocation!%0A%0A`;
-      waMsg += `Name: ${name}%0A`;
-      if (phone) waMsg += `Phone: ${phone}%0A`;
-      if (email) waMsg += `Email: ${email}%0A`;
-      if (service) waMsg += `Service: ${service}%0A`;
-      waMsg += `%0AMessage: ${message}`;
+      var msg = 'Hello Timeless Relocation!\n\n'
+        + 'Name: ' + get('name') + '\n'
+        + 'Phone: ' + get('phone') + '\n'
+        + 'Email: ' + get('email') + '\n'
+        + 'Service: ' + get('service') + '\n'
+        + 'Message: ' + get('message') + '\n';
 
-      window.open(`https://wa.me/971568654794?text=${waMsg}`, '_blank');
+      window.open('https://wa.me/971568654794?text=' + encodeURIComponent(msg), '_blank');
+    });
+  }
 
-      // Visual success feedback
-      const btn = contactForm.querySelector('button[type="submit"]');
-      if (btn) {
-        const original = btn.innerHTML;
-        btn.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Message Sent!';
-        btn.style.background = '#00BFA5';
-        setTimeout(() => {
-          btn.innerHTML = original;
-          btn.style.background = '';
-          contactForm.reset();
-        }, 3000);
+  /* --- Active nav link --- */
+  function activeNav() {
+    var path = window.location.pathname;
+    var links = document.querySelectorAll('.nav-link, .mobile-link, .dropdown-panel a, .mobile-dd-list a');
+    links.forEach(function (link) {
+      var href = link.getAttribute('href');
+      if (href && path.endsWith(href.replace(/^\.\.\/|^\.\//, ''))) {
+        link.classList.add('active');
       }
     });
   }
 
-  /* ------------------------------------------
-     Quote Form - sends data to WhatsApp
-  ------------------------------------------ */
-  const quoteForm = document.getElementById('quoteForm');
-
-  if (quoteForm) {
-    quoteForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const fd = new FormData(quoteForm);
-      let waMsg = `Hello! I'd like a free quote.%0A%0A`;
-
-      for (const [key, value] of fd.entries()) {
-        if (value) waMsg += `${key}: ${value}%0A`;
-      }
-
-      window.open(`https://wa.me/971568654794?text=${waMsg}`, '_blank');
-    });
-  }
-
-  /* ------------------------------------------
-     Active Navigation Highlighting
-  ------------------------------------------ */
-  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-  const allNavLinks = document.querySelectorAll('.nav-links a, .mobile-nav-links a');
-
-  allNavLinks.forEach((link) => {
-    const href = link.getAttribute('href');
-    if (!href) return;
-
-    // Direct page match
-    if (href === currentPage || (currentPage === '' && href === 'index.html')) {
-      link.classList.add('active');
-    }
-
-    // Service sub-pages: highlight the Services dropdown toggle
-    if (
-      (currentPage.includes('services/') || window.location.pathname.includes('services/')) &&
-      href.includes('services/')
-    ) {
-      const parentDropdown = link.closest('.dropdown');
-      if (parentDropdown) {
-        const toggle = parentDropdown.querySelector('.dropdown-toggle');
-        toggle?.classList.add('active');
-      }
-    }
-  });
-
-});
+})();

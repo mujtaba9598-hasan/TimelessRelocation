@@ -1,0 +1,151 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-190 -150 1120 600" width="297mm" height="210mm" style="display:block;margin:auto">
+  <defs>
+    <linearGradient id="goldFoil4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#b8842e"/>
+      <stop offset="15%" stop-color="#f0d090"/>
+      <stop offset="35%" stop-color="#d4943a"/>
+      <stop offset="55%" stop-color="#f5e0a0"/>
+      <stop offset="75%" stop-color="#c4863a"/>
+      <stop offset="100%" stop-color="#e8b36a"/>
+    </linearGradient>
+    <linearGradient id="creamGrad4" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fdf8f0"/>
+      <stop offset="100%" stop-color="#f8f0e0"/>
+    </linearGradient>
+    <!-- Deboss/letterpress effect -->
+    <filter id="deboss4">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="0.5" result="blur"/>
+      <feOffset in="blur" dx="0.5" dy="0.5" result="offsetBlur"/>
+      <feFlood flood-color="#000000" flood-opacity="0.15"/>
+      <feComposite in2="offsetBlur" operator="in" result="shadow"/>
+      <feOffset in="SourceAlpha" dx="-0.3" dy="-0.3" result="highlightOffset"/>
+      <feGaussianBlur in="highlightOffset" stdDeviation="0.3" result="highlightBlur"/>
+      <feFlood flood-color="#ffffff" flood-opacity="0.3"/>
+      <feComposite in2="highlightBlur" operator="in" result="highlight"/>
+      <feMerge>
+        <feMergeNode in="shadow"/>
+        <feMergeNode in="highlight"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <!-- Cotton paper texture -->
+    <pattern id="cotton4" patternUnits="userSpaceOnUse" width="6" height="6">
+      <rect width="6" height="6" fill="transparent"/>
+      <circle cx="1" cy="2" r="0.2" fill="rgba(180,160,130,0.06)"/>
+      <circle cx="4" cy="5" r="0.15" fill="rgba(180,160,130,0.05)"/>
+      <circle cx="2" cy="4" r="0.25" fill="rgba(180,160,130,0.04)"/>
+      <circle cx="5" cy="1" r="0.2" fill="rgba(180,160,130,0.06)"/>
+    </pattern>
+    <filter id="shadow4" x="-5%" y="-5%" width="115%" height="115%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-opacity="0.12" flood-color="#000"/>
+    </filter>
+    <clipPath id="fc4"><rect x="10" y="10" width="340" height="189" rx="10"/></clipPath>
+    <clipPath id="bc4"><rect x="390" y="10" width="340" height="189" rx="10"/></clipPath>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800');
+      text { font-family: 'Outfit', sans-serif; }
+    </style>
+  </defs>
+
+  <!-- Full page background -->
+  <rect x="-190" y="-150" width="1120" height="600" fill="#d4d4d4"/>
+
+  <!-- ===== FRONT — Cream Letterpress ===== -->
+  <g filter="url(#shadow4)">
+    <rect x="10" y="10" width="340" height="189" rx="10" fill="url(#creamGrad4)"/>
+  </g>
+  <rect x="10" y="10" width="340" height="189" rx="10" fill="url(#cotton4)" clip-path="url(#fc4)"/>
+
+  <!-- Embossed border -->
+  <rect x="24" y="24" width="312" height="161" rx="5" fill="none" stroke="rgba(180,160,130,0.15)" stroke-width="0.5"/>
+
+  <!-- Logo centered -->
+  <image href="../sample-2/Timeless_Logo.png" x="110" y="30" width="140" height="95" preserveAspectRatio="xMidYMid meet"/>
+
+  <!-- Debossed divider -->
+  <line x1="145" y1="132" x2="215" y2="132" stroke="rgba(180,160,130,0.3)" stroke-width="0.5"/>
+
+  <!-- Debossed name -->
+  <text x="180" y="152" text-anchor="middle" font-size="10" font-weight="700" fill="#0f2b46" filter="url(#deboss4)" letter-spacing="3">MUHAMMAD BILAL</text>
+  <!-- Debossed title -->
+  <text x="180" y="166" text-anchor="middle" font-size="6" font-weight="400" fill="#9c8c74" letter-spacing="2" filter="url(#deboss4)">FOUNDER &amp; MANAGING DIRECTOR</text>
+
+  <!-- Gold foil tagline -->
+  <text x="180" y="183" text-anchor="middle" font-size="5.5" font-weight="400" fill="url(#goldFoil4)" letter-spacing="2">THE WAY TO MOVE. THE WAY TO CARE.</text>
+
+  <text x="180" y="220" text-anchor="middle" font-size="10" font-weight="500" fill="#9ca3af">Front</text>
+
+
+  <!-- ===== BACK — Cream Letterpress ===== -->
+  <g filter="url(#shadow4)">
+    <rect x="390" y="10" width="340" height="189" rx="10" fill="url(#creamGrad4)"/>
+  </g>
+  <rect x="390" y="10" width="340" height="189" rx="10" fill="url(#cotton4)" clip-path="url(#bc4)"/>
+
+  <!-- Gold foil top strip -->
+  <rect x="390" y="10" width="340" height="3" fill="url(#goldFoil4)" clip-path="url(#bc4)"/>
+
+  <!-- Embossed border -->
+  <rect x="404" y="24" width="312" height="161" rx="5" fill="none" stroke="rgba(180,160,130,0.15)" stroke-width="0.5"/>
+
+  <!-- Small logo top center -->
+  <image href="../sample-2/Timeless_Logo.png" x="525" y="28" width="45" height="32" preserveAspectRatio="xMidYMid meet" opacity="0.15"/>
+
+  <!-- Contact details - letterpress style -->
+  <g filter="url(#deboss4)">
+    <g transform="translate(420, 50)">
+      <path d="M4.47 7.2c1.03 2.02 2.69 3.68 4.71 4.71l1.57-1.57c.19-.19.48-.26.73-.17.8.26 1.67.41 2.55.41.39 0 .71.32.71.71v2.5c0 .39-.32.71-.71.71C6.71 14.5 1.5 9.29 1.5 2.79c0-.39.32-.71.71-.71H4.71c.39 0 .71.32.71.71 0 .89.14 1.75.41 2.55.08.25.01.53-.17.73L4.47 7.2z" fill="#9c8c74" transform="scale(0.7)"/>
+      <text x="14" y="8" font-size="7.5" font-weight="400" fill="#5a4d3a" letter-spacing="0.5">+971 56 865 4794</text>
+      <text x="130" y="8" font-size="6" font-weight="300" fill="#9c8c74">PHONE</text>
+    </g>
+
+    <line x1="420" y1="66" x2="700" y2="66" stroke="rgba(180,160,130,0.15)" stroke-width="0.3"/>
+
+    <g transform="translate(420, 76)">
+      <path d="M8.5 1C4.36 1 1 4.36 1 8.5c0 1.35.38 2.61 1.03 3.69L1 16l3.81-1.03A7.46 7.46 0 008.5 16C12.64 16 16 12.64 16 8.5S12.64 1 8.5 1zm0 13.5a5.97 5.97 0 01-3.18-.92l-.19-.11-2.15.64.64-2.15-.12-.2A5.97 5.97 0 012.5 8.5C2.5 5.19 5.19 2.5 8.5 2.5S14.5 5.19 14.5 8.5 11.81 14.5 8.5 14.5z" fill="#9c8c74" transform="scale(0.7)"/>
+      <text x="14" y="8" font-size="7.5" font-weight="400" fill="#5a4d3a" letter-spacing="0.5">+971 56 865 4794</text>
+      <text x="130" y="8" font-size="6" font-weight="300" fill="#9c8c74">WHATSAPP</text>
+    </g>
+
+    <line x1="420" y1="92" x2="700" y2="92" stroke="rgba(180,160,130,0.15)" stroke-width="0.3"/>
+
+    <g transform="translate(420, 102)">
+      <path d="M14.29 3H2.71C1.77 3 1 3.77 1 4.71v7.57C1 13.23 1.77 14 2.71 14h11.57c.95 0 1.71-.77 1.71-1.71V4.71C16 3.77 15.23 3 14.29 3zm0 1.43L8.5 8.86 2.71 4.43h11.57zm0 8.57H2.71V5.86l5.79 4.43 5.79-4.43v7.14z" fill="#9c8c74" transform="scale(0.7)"/>
+      <text x="14" y="8" font-size="7.5" font-weight="400" fill="#5a4d3a" letter-spacing="0.5">info@timelessrelocation.com</text>
+      <text x="180" y="8" font-size="6" font-weight="300" fill="#9c8c74">EMAIL</text>
+    </g>
+
+    <line x1="420" y1="118" x2="700" y2="118" stroke="rgba(180,160,130,0.15)" stroke-width="0.3"/>
+
+    <g transform="translate(420, 128)">
+      <path d="M8.5 1C5.46 1 3 3.46 3 6.5 3 10.88 8.5 16 8.5 16s5.5-5.12 5.5-9.5C14 3.46 11.54 1 8.5 1zm0 7.5c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z" fill="#9c8c74" transform="scale(0.7)"/>
+      <text x="14" y="8" font-size="7.5" font-weight="400" fill="#5a4d3a" letter-spacing="0.5">Bur Dubai, Dubai, UAE</text>
+      <text x="130" y="8" font-size="6" font-weight="300" fill="#9c8c74">LOCATION</text>
+    </g>
+
+    <line x1="420" y1="144" x2="700" y2="144" stroke="rgba(180,160,130,0.15)" stroke-width="0.3"/>
+
+    <g transform="translate(420, 154)">
+      <path d="M8.5 1C4.36 1 1 4.36 1 8.5S4.36 16 8.5 16 16 12.64 16 8.5 12.64 1 8.5 1zm0 13.5C5.19 14.5 2.5 11.81 2.5 8.5S5.19 2.5 8.5 2.5 14.5 5.19 14.5 8.5 11.81 14.5 8.5 14.5zm.54-9.25H7.75v4.29l3.75 2.25.54-.88-3.21-1.91V5.25z" fill="#9c8c74" transform="scale(0.7)"/>
+      <text x="14" y="8" font-size="7.5" font-weight="400" fill="#5a4d3a" letter-spacing="0.5">Mon – Sat · 8:00 AM – 6:00 PM</text>
+      <text x="195" y="8" font-size="6" font-weight="300" fill="#9c8c74">HOURS</text>
+    </g>
+
+    <line x1="420" y1="170" x2="700" y2="170" stroke="rgba(180,160,130,0.15)" stroke-width="0.3"/>
+
+    <g transform="translate(420, 180)">
+      <path d="M8.5 1C4.36 1 1 4.36 1 8.5S4.36 16 8.5 16 16 12.64 16 8.5 12.64 1 8.5 1z" fill="#9c8c74" transform="scale(0.7)"/>
+      <text x="14" y="8" font-size="7.5" font-weight="400" fill="#5a4d3a" letter-spacing="0.5">timelessrelocation.com</text>
+      <text x="130" y="8" font-size="6" font-weight="300" fill="#9c8c74">WEBSITE</text>
+    </g>
+  </g>
+
+  <!-- Gold foil bottom strip -->
+  <rect x="390" y="196" width="340" height="3" fill="url(#goldFoil4)" clip-path="url(#bc4)"/>
+
+  <text x="560" y="220" text-anchor="middle" font-size="10" font-weight="500" fill="#9ca3af">Back</text>
+
+  <!-- Title -->
+  <text x="370" y="255" text-anchor="middle" font-size="11" font-weight="600" fill="#0f2b46" letter-spacing="2">VARIATION 4 — CREAM LETTERPRESS</text>
+  <text x="370" y="273" text-anchor="middle" font-size="8" font-weight="400" fill="#9ca3af">90 x 50 mm · 600gsm Cotton · Letterpress debossed + Gold foil tagline + Edge painting</text>
+</svg>

@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Branding Package — Timeless Relocation | Quartermasters FZC</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0f2b46;
+    --navy-light: #173a5c;
+    --navy-dark: #091e33;
+    --gold: #d4943a;
+    --gold-light: #e8b36a;
+    --gold-pale: #fdf5ea;
+    --qm-orange: #c4713a;
+    --white: #ffffff;
+    --off-white: #f7f8fa;
+    --gray-100: #f3f4f6;
+    --gray-200: #e5e7eb;
+    --gray-400: #9ca3af;
+    --gray-500: #6b7280;
+    --gray-800: #1f2937;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Outfit', sans-serif;
+    background: var(--gray-100);
+    color: var(--navy);
+    min-height: 100vh;
+  }
+
+  /* ===== TOP BAR ===== */
+  .topbar {
+    background: var(--navy);
+    padding: 14px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .topbar-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .topbar-left img {
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  .topbar-left span {
+    font-size: 13px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.9);
+    letter-spacing: 1px;
+  }
+  .topbar-right {
+    font-size: 11px;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 0.5px;
+  }
+
+  /* ===== HERO ===== */
+  .hero {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+    padding: 80px 40px 60px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -50%; right: -20%;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(212,148,58,0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-badge {
+    display: inline-block;
+    background: rgba(212,148,58,0.12);
+    border: 1px solid rgba(212,148,58,0.2);
+    color: var(--gold-light);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    padding: 6px 18px;
+    border-radius: 50px;
+    margin-bottom: 24px;
+    text-transform: uppercase;
+  }
+  .hero h1 {
+    font-size: 42px;
+    font-weight: 800;
+    color: var(--white);
+    letter-spacing: -1px;
+    margin-bottom: 8px;
+  }
+  .hero h1 span { color: var(--gold); }
+  .hero p {
+    font-size: 16px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.5);
+    max-width: 500px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+  .hero-meta {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+  }
+  .hero-meta div {
+    text-align: center;
+  }
+  .hero-meta .value {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--gold-light);
+  }
+  .hero-meta .label {
+    font-size: 10px;
+    font-weight: 400;
+    color: rgba(255,255,255,0.35);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 2px;
+  }
+
+  /* ===== CARD SECTIONS ===== */
+  .cards-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+  }
+  .card-section {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 40px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.03);
+    border: 1px solid var(--gray-200);
+  }
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 24px;
+  }
+  .card-header h2 {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--navy);
+  }
+  .card-header .tag {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    background: var(--gold-pale);
+    padding: 4px 12px;
+    border-radius: 50px;
+  }
+  .card-specs {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+  }
+  .card-specs .spec {
+    font-size: 11px;
+    color: var(--gray-500);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .card-specs .spec::before {
+    content: '';
+    width: 4px; height: 4px;
+    background: var(--gold);
+    border-radius: 50%;
+  }
+  .card-svg-wrapper {
+    display: flex;
+    justify-content: center;
+    background: var(--gray-100);
+    border-radius: 12px;
+    padding: 30px 20px;
+    border: 1px solid var(--gray-200);
+  }
+  .card-svg-wrapper svg {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* ===== FOOTER ===== */
+  .footer {
+    background: var(--navy);
+    padding: 40px;
+    text-align: center;
+    position: relative;
+  }
+  .footer::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--gold), var(--gold-light), var(--gold));
+  }
+  .footer-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+  .footer-logo img {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  .footer-logo .name {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: 1px;
+  }
+  .footer-logo .name span {
+    color: var(--qm-orange);
+  }
+  .footer-tagline {
+    font-size: 12px;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 20px;
+  }
+  .footer-contact {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+  .footer-contact a {
+    font-size: 11px;
+    color: rgba(255,255,255,0.5);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .footer-contact a:hover { color: var(--gold-light); }
+  .footer-copy {
+    margin-top: 24px;
+    font-size: 10px;
+    color: rgba(255,255,255,0.2);
+  }
+  .footer-copy span { color: var(--qm-orange); }
+
+  /* ===== PRINT ===== */
+  @media print {
+    body { background: #fff; }
+    .topbar, .hero { display: none; }
+    .card-section { box-shadow: none; border: 1px solid #e5e7eb; page-break-inside: avoid; }
+    .footer { background: #fff; color: #000; }
+    .footer::before { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="topbar-left">
+    <img src="quartermasters-logo.avif" alt="QM">
+    <span>QUARTERMASTERS FZC</span>
+  </div>
+  <div class="topbar-right">Digital Solutions &amp; Branding &middot; Ajman, UAE</div>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-badge">Branding Package</div>
+  <h1>Brand Identity &amp; <span>Business Cards</span></h1>
+  <p>Timeless Relocation — Professional Movers &amp; Packers, Dubai</p>
+  <div class="hero-meta">
+    <div>
+      <div class="value">Brand Palette</div>
+      <div class="label">Guidelines</div>
+    </div>
+    <div>
+      <div class="value">5 Card Designs</div>
+      <div class="label">Variations</div>
+    </div>
+    <div>
+      <div class="value">Print Ready</div>
+      <div class="label">CMYK / 300 DPI</div>
+    </div>
+    <div>
+      <div class="value">March 2026</div>
+      <div class="label">Date</div>
+    </div>
+  </div>
+</div>
+
+<!-- CARDS -->
+<div class="cards-container">
+
+  <!-- ===== BRAND PALETTE ===== -->
+  <div class="card-section">
+    <div class="card-header">
+      <h2>Brand Palette &amp; Guidelines</h2>
+      <div class="tag">Identity</div>
+    </div>
+
+    <!-- Primary Colors -->
+    <div style="margin-bottom:8px;font-size:10px;font-weight:700;color:#d4943a;letter-spacing:2px;text-transform:uppercase;">Primary Palette</div>
+    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-bottom:28px;">
+      <div style="border-radius:10px;overflow:hidden;border:1px solid #e5e7eb;">
+        <div style="height:50px;background:#0f2b46;"></div>
+        <div style="padding:8px 10px;"><div style="font-size:11px;font-weight:600;color:#0f2b46;">Navy</div><div style="font-size:10px;color:#6b7280;font-family:monospace;">#0F2B46</div></div>
+      </div>
+      <div style="border-radius:10px;overflow:hidden;border:1px solid #e5e7eb;">
+        <div style="height:50px;background:#173a5c;"></div>
+        <div style="padding:8px 10px;"><div style="font-size:11px;font-weight:600;color:#0f2b46;">Navy Light</div><div style="font-size:10px;color:#6b7280;font-family:monospace;">#173A5C</div></div>
+      </div>
+      <div style="border-radius:10px;overflow:hidden;border:1px solid #e5e7eb;">
+        <div style="height:50px;background:#d4943a;"></div>
+        <div style="padding:8px 10px;"><div style="font-size:11px;font-weight:600;color:#0f2b46;">Gold</div><div style="font-size:10px;color:#6b7280;font-family:monospace;">#D4943A</div></div>
+      </div>
+      <div style="border-radius:10px;overflow:hidden;border:1px solid #e5e7eb;">
+        <div style="height:50px;background:#e8b36a;"></div>
+        <div style="padding:8px 10px;"><div style="font-size:11px;font-weight:600;color:#0f2b46;">Gold Light</div><div style="font-size:10px;color:#6b7280;font-family:monospace;">#E8B36A</div></div>
+      </div>
+      <div style="border-radius:10px;overflow:hidden;border:1px solid #e5e7eb;">
+        <div style="height:50px;background:#fdf5ea;"></div>
+        <div style="padding:8px 10px;"><div style="font-size:11px;font-weight:600;color:#0f2b46;">Gold Pale</div><div style="font-size:10px;color:#6b7280;font-family:monospace;">#FDF5EA</div></div>
+      </div>
+    </div>
+
+    <!-- Supporting Colors -->
+    <div style="margin-bottom:8px;font-size:10px;font-weight:700;color:#d4943a;letter-spacing:2px;text-transform:uppercase;">Supporting Colors</div>
+    <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin-bottom:28px;">
+      <div style="display:flex;align-items:center;gap:8px;padding:8px 10px;border-radius:8px;border:1px solid #e5e7eb;">
+        <div style="width:22px;height:22px;border-radius:50%;background:#ffffff;border:1px solid #e5e7eb;flex-shrink:0;"></div>
+        <div><div style="font-size:10px;font-weight:500;color:#374151;">White</div><div style="font-size:9px;color:#9ca3af;font-family:monospace;">#FFFFFF</div></div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px;padding:8px 10px;border-radius:8px;border:1px solid #e5e7eb;">
+        <div style="width:22px;height:22px;border-radius:50%;background:#f7f8fa;border:1px solid #e5e7eb;flex-shrink:0;"></div>
+        <div><div style="font-size:10px;font-weight:500;color:#374151;">Off White</div><div style="font-size:9px;color:#9ca3af;font-family:monospace;">#F7F8FA</div></div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px;padding:8px 10px;border-radius:8px;border:1px solid #e5e7eb;">
+        <div style="width:22px;height:22px;border-radius:50%;background:#e5e7eb;flex-shrink:0;"></div>
+        <div><div style="font-size:10px;font-weight:500;color:#374151;">Gray 200</div><div style="font-size:9px;color:#9ca3af;font-family:monospace;">#E5E7EB</div></div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px;padding:8px 10px;border-radius:8px;border:1px solid #e5e7eb;">
+        <div style="width:22px;height:22px;border-radius:50%;background:#6b7280;flex-shrink:0;"></div>
+        <div><div style="font-size:10px;font-weight:500;color:#374151;">Gray 500</div><div style="font-size:9px;color:#9ca3af;font-family:monospace;">#6B7280</div></div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px;padding:8px 10px;border-radius:8px;border:1px solid #e5e7eb;">
+        <div style="width:22px;height:22px;border-radius:50%;background:#1f2937;flex-shrink:0;"></div>
+        <div><div style="font-size:10px;font-weight:500;color:#374151;">Gray 800</div><div style="font-size:9px;color:#9ca3af;font-family:monospace;">#1F2937</div></div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px;padding:8px 10px;border-radius:8px;border:1px solid #e5e7eb;">
+        <div style="width:22px;height:22px;border-radius:50%;background:#25D366;flex-shrink:0;"></div>
+        <div><div style="font-size:10px;font-weight:500;color:#374151;">WhatsApp</div><div style="font-size:9px;color:#9ca3af;font-family:monospace;">#25D366</div></div>
+      </div>
+    </div>
+
+    <!-- Typography -->
+    <div style="margin-bottom:8px;font-size:10px;font-weight:700;color:#d4943a;letter-spacing:2px;text-transform:uppercase;">Typography</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:28px;">
+      <div style="border:1px solid #e5e7eb;border-radius:10px;padding:20px;">
+        <div style="font-size:22px;font-weight:700;color:#0f2b46;margin-bottom:4px;">Outfit</div>
+        <div style="font-size:11px;color:#6b7280;margin-bottom:14px;">Google Fonts — Primary Typeface</div>
+        <div style="display:flex;flex-direction:column;gap:6px;">
+          <div style="display:flex;align-items:baseline;gap:10px;"><span style="font-size:9px;color:#9ca3af;width:70px;text-transform:uppercase;letter-spacing:0.5px;">Light 300</span><span style="font-size:13px;font-weight:300;color:#0f2b46;">The way to move. The way to care.</span></div>
+          <div style="display:flex;align-items:baseline;gap:10px;"><span style="font-size:9px;color:#9ca3af;width:70px;text-transform:uppercase;letter-spacing:0.5px;">Regular 400</span><span style="font-size:13px;font-weight:400;color:#0f2b46;">The way to move. The way to care.</span></div>
+          <div style="display:flex;align-items:baseline;gap:10px;"><span style="font-size:9px;color:#9ca3af;width:70px;text-transform:uppercase;letter-spacing:0.5px;">Medium 500</span><span style="font-size:13px;font-weight:500;color:#0f2b46;">The way to move. The way to care.</span></div>
+          <div style="display:flex;align-items:baseline;gap:10px;"><span style="font-size:9px;color:#9ca3af;width:70px;text-transform:uppercase;letter-spacing:0.5px;">SemiBold 600</span><span style="font-size:13px;font-weight:600;color:#0f2b46;">The way to move. The way to care.</span></div>
+          <div style="display:flex;align-items:baseline;gap:10px;"><span style="font-size:9px;color:#9ca3af;width:70px;text-transform:uppercase;letter-spacing:0.5px;">Bold 700</span><span style="font-size:13px;font-weight:700;color:#0f2b46;">The way to move. The way to care.</span></div>
+          <div style="display:flex;align-items:baseline;gap:10px;"><span style="font-size:9px;color:#9ca3af;width:70px;text-transform:uppercase;letter-spacing:0.5px;">ExtraBold 800</span><span style="font-size:13px;font-weight:800;color:#0f2b46;">The way to move. The way to care.</span></div>
+        </div>
+      </div>
+      <div style="border:1px solid #e5e7eb;border-radius:10px;padding:20px;">
+        <div style="font-size:16px;font-weight:600;color:#0f2b46;margin-bottom:14px;">Type Scale</div>
+        <div style="display:flex;flex-direction:column;gap:8px;">
+          <div style="display:flex;align-items:baseline;gap:10px;"><span style="font-size:9px;color:#9ca3af;width:50px;text-transform:uppercase;">H1</span><span style="font-size:24px;font-weight:800;color:#0f2b46;">48px / 800</span></div>
+          <div style="display:flex;align-items:baseline;gap:10px;"><span style="font-size:9px;color:#9ca3af;width:50px;text-transform:uppercase;">H2</span><span style="font-size:20px;font-weight:700;color:#0f2b46;">36px / 700</span></div>
+          <div style="display:flex;align-items:baseline;gap:10px;"><span style="font-size:9px;color:#9ca3af;width:50px;text-transform:uppercase;">H3</span><span style="font-size:16px;font-weight:600;color:#0f2b46;">24px / 600</span></div>
+          <div style="display:flex;align-items:baseline;gap:10px;"><span style="font-size:9px;color:#9ca3af;width:50px;text-transform:uppercase;">Body</span><span style="font-size:14px;font-weight:400;color:#0f2b46;">16px / 400</span></div>
+          <div style="display:flex;align-items:baseline;gap:10px;"><span style="font-size:9px;color:#9ca3af;width:50px;text-transform:uppercase;">Small</span><span style="font-size:12px;font-weight:400;color:#0f2b46;">14px / 400</span></div>
+          <div style="display:flex;align-items:baseline;gap:10px;"><span style="font-size:9px;color:#9ca3af;width:50px;text-transform:uppercase;">Caption</span><span style="font-size:10px;font-weight:400;color:#0f2b46;">12px / 400</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Logo Usage -->
+    <div style="margin-bottom:8px;font-size:10px;font-weight:700;color:#d4943a;letter-spacing:2px;text-transform:uppercase;">Logo Usage</div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:28px;">
+      <div>
+        <div style="border-radius:10px;padding:20px;display:flex;align-items:center;justify-content:center;height:80px;border:1px solid #e5e7eb;background:#ffffff;">
+          <img src="sample-2/Timeless_Logo.png" alt="Logo on white" style="max-height:50px;">
+        </div>
+        <div style="font-size:9px;color:#9ca3af;text-align:center;margin-top:6px;text-transform:uppercase;letter-spacing:0.5px;">On White</div>
+      </div>
+      <div>
+        <div style="border-radius:10px;padding:20px;display:flex;align-items:center;justify-content:center;height:80px;background:#0f2b46;">
+          <img src="sample-2/Timeless_Logo.png" alt="Logo on navy" style="max-height:50px;filter:brightness(1.5);">
+        </div>
+        <div style="font-size:9px;color:#9ca3af;text-align:center;margin-top:6px;text-transform:uppercase;letter-spacing:0.5px;">On Navy</div>
+      </div>
+      <div>
+        <div style="border-radius:10px;padding:20px;display:flex;align-items:center;justify-content:center;height:80px;background:#d4943a;">
+          <img src="sample-2/Timeless_Logo.png" alt="Logo on gold" style="max-height:50px;">
+        </div>
+        <div style="font-size:9px;color:#9ca3af;text-align:center;margin-top:6px;text-transform:uppercase;letter-spacing:0.5px;">On Gold</div>
+      </div>
+    </div>
+
+    <!-- UI Elements -->
+    <div style="margin-bottom:8px;font-size:10px;font-weight:700;color:#d4943a;letter-spacing:2px;text-transform:uppercase;">UI Elements</div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:28px;">
+      <div style="border:1px solid #e5e7eb;border-radius:10px;padding:16px;">
+        <div style="font-size:11px;font-weight:700;color:#0f2b46;margin-bottom:10px;text-transform:uppercase;letter-spacing:0.5px;">Buttons</div>
+        <div style="display:flex;flex-direction:column;gap:8px;">
+          <div style="display:inline-flex;align-items:center;justify-content:center;padding:8px 20px;border-radius:999px;background:#d4943a;color:#fff;font-size:11px;font-weight:600;">Get a Quote</div>
+          <div style="display:inline-flex;align-items:center;justify-content:center;padding:8px 20px;border-radius:999px;background:#0f2b46;color:#fff;font-size:11px;font-weight:600;">Learn More</div>
+          <div style="display:inline-flex;align-items:center;justify-content:center;padding:8px 20px;border-radius:999px;background:transparent;color:#0f2b46;font-size:11px;font-weight:600;border:2px solid #0f2b46;">Contact Us</div>
+          <div style="display:inline-flex;align-items:center;justify-content:center;padding:8px 20px;border-radius:999px;background:transparent;color:#d4943a;font-size:11px;font-weight:600;border:2px solid #d4943a;">View Services</div>
+        </div>
+      </div>
+      <div style="border:1px solid #e5e7eb;border-radius:10px;padding:16px;">
+        <div style="font-size:11px;font-weight:700;color:#0f2b46;margin-bottom:10px;text-transform:uppercase;letter-spacing:0.5px;">Border Radius</div>
+        <div style="font-size:12px;color:#4b5563;line-height:2;">Small: 6px<br>Medium: 10px<br>Large: 14px<br>XL: 20px<br>Full: 999px (pills)</div>
+        <div style="font-size:11px;font-weight:700;color:#0f2b46;margin-top:10px;margin-bottom:6px;text-transform:uppercase;letter-spacing:0.5px;">Shadows</div>
+        <div style="font-size:11px;color:#6b7280;">Subtle, layered box shadows for depth</div>
+      </div>
+      <div style="border:1px solid #e5e7eb;border-radius:10px;padding:16px;">
+        <div style="font-size:11px;font-weight:700;color:#0f2b46;margin-bottom:10px;text-transform:uppercase;letter-spacing:0.5px;">Brand Voice</div>
+        <div style="font-size:11px;font-weight:600;color:#0f2b46;">Tagline:</div>
+        <div style="font-size:12px;color:#d4943a;font-style:italic;margin-bottom:8px;">"The way to move. The way to care."</div>
+        <div style="font-size:11px;font-weight:600;color:#0f2b46;">Tone:</div>
+        <div style="font-size:11px;color:#6b7280;margin-bottom:8px;">Professional, trustworthy, warm</div>
+        <div style="font-size:11px;font-weight:600;color:#0f2b46;">Keywords:</div>
+        <div style="font-size:11px;color:#6b7280;">Timeless, Relocation, Professional movers, Dubai, Trusted</div>
+      </div>
+    </div>
+
+    <!-- Contact Info -->
+    <div style="margin-bottom:8px;font-size:10px;font-weight:700;color:#d4943a;letter-spacing:2px;text-transform:uppercase;">Contact Information</div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;">
+      <div style="border:1px solid #e5e7eb;border-radius:10px;padding:14px;">
+        <div style="font-size:11px;font-weight:700;color:#0f2b46;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px;">Phone / WhatsApp</div>
+        <div style="font-size:13px;color:#4b5563;">+971 56 865 4794</div>
+      </div>
+      <div style="border:1px solid #e5e7eb;border-radius:10px;padding:14px;">
+        <div style="font-size:11px;font-weight:700;color:#0f2b46;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px;">Email</div>
+        <div style="font-size:13px;color:#4b5563;">info@timelessrelocation.com</div>
+      </div>
+      <div style="border:1px solid #e5e7eb;border-radius:10px;padding:14px;">
+        <div style="font-size:11px;font-weight:700;color:#0f2b46;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px;">Location</div>
+        <div style="font-size:13px;color:#4b5563;">Bur Dubai, Dubai, UAE</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== BUSINESS CARDS SECTION DIVIDER ===== -->
+  <div style="text-align:center;">
+    <div style="font-size:10px;font-weight:700;color:#d4943a;letter-spacing:3px;text-transform:uppercase;margin-bottom:4px;">Business Card Designs</div>
+    <div style="font-size:12px;color:#9ca3af;">5 Variations &middot; 90 x 50 mm &middot; Print Ready</div>
+  </div>
+
+  <!-- ===== V1 ===== -->
+  <div class="card-section">
+    <div class="card-header">
+      <h2>Variation 1 — Dark Navy</h2>
+      <div class="tag">Classic</div>
+    </div>
+    <div class="card-specs">
+      <div class="spec">350gsm matte</div>
+      <div class="spec">Rounded corners 3mm</div>
+      <div class="spec">Full color CMYK</div>
+    </div>
+    <div class="card-svg-wrapper">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 210" width="740" height="210">
+        <defs>
+          <linearGradient id="v1ng" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#0f2b46"/><stop offset="50%" stop-color="#173a5c"/><stop offset="100%" stop-color="#0f2b46"/></linearGradient>
+          <linearGradient id="v1gg" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#d4943a"/><stop offset="50%" stop-color="#e8b36a"/><stop offset="100%" stop-color="#d4943a"/></linearGradient>
+          <linearGradient id="v1gv" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#d4943a"/><stop offset="100%" stop-color="#e8b36a"/></linearGradient>
+          <clipPath id="v1fc"><rect x="10" y="10" width="340" height="189" rx="10"/></clipPath>
+          <clipPath id="v1bc"><rect x="390" y="10" width="340" height="189" rx="10"/></clipPath>
+          <filter id="v1s"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-opacity="0.1"/></filter>
+          <style>text{font-family:'Outfit',sans-serif}</style>
+        </defs>
+        <g filter="url(#v1s)"><rect x="10" y="10" width="340" height="189" rx="10" fill="url(#v1ng)"/></g>
+        <rect x="10" y="10" width="340" height="5" rx="10" fill="url(#v1gg)" clip-path="url(#v1fc)"/>
+        <circle cx="290" cy="50" r="80" fill="#d4943a" opacity="0.04" clip-path="url(#v1fc)"/>
+        <image href="sample-2/Timeless_Logo.png" x="110" y="35" width="140" height="100" preserveAspectRatio="xMidYMid meet" style="filter:brightness(1.3)"/>
+        <text x="180" y="168" text-anchor="middle" font-size="6.5" font-weight="400" fill="#e8b36a" opacity="0.8" letter-spacing="2.5">THE WAY TO MOVE. THE WAY TO CARE.</text>
+        <g filter="url(#v1s)"><rect x="390" y="10" width="340" height="189" rx="10" fill="#ffffff"/></g>
+        <rect x="390" y="30" width="4" height="149" rx="2" fill="url(#v1gv)" clip-path="url(#v1bc)"/>
+        <text x="412" y="46" font-size="15" font-weight="700" fill="#0f2b46">Bilal Talib</text>
+        <text x="412" y="60" font-size="7.5" font-weight="500" fill="#d4943a" letter-spacing="1.2">FOUNDER &amp; MANAGING DIRECTOR</text>
+        <line x1="412" y1="70" x2="490" y2="70" stroke="#e5e7eb" stroke-width="0.7"/>
+        <g transform="translate(412,85)"><circle cx="5" cy="-3" r="5" fill="#d4943a" opacity="0.1"/><path d="M4.47 7.2c1.03 2.02 2.69 3.68 4.71 4.71l1.57-1.57c.19-.19.48-.26.73-.17.8.26 1.67.41 2.55.41.39 0 .71.32.71.71v2.5c0 .39-.32.71-.71.71C6.71 14.5 1.5 9.29 1.5 2.79c0-.39.32-.71.71-.71H4.71c.39 0 .71.32.71.71 0 .89.14 1.75.41 2.55.08.25.01.53-.17.73L4.47 7.2z" fill="#d4943a" transform="scale(0.7)"/><text x="14" y="7.5" font-size="8" font-weight="400" fill="#4b5563">+971 56 865 4794</text></g>
+        <g transform="translate(412,100)"><circle cx="5" cy="-3" r="5" fill="#25D366" opacity="0.1"/><path d="M8.5 1C4.36 1 1 4.36 1 8.5c0 1.35.38 2.61 1.03 3.69L1 16l3.81-1.03A7.46 7.46 0 008.5 16C12.64 16 16 12.64 16 8.5S12.64 1 8.5 1z" fill="#25D366" transform="scale(0.7)"/><text x="14" y="7.5" font-size="8" font-weight="400" fill="#4b5563">+971 56 865 4794</text></g>
+        <g transform="translate(412,115)"><circle cx="5" cy="-3" r="5" fill="#d4943a" opacity="0.1"/><path d="M14.29 3H2.71C1.77 3 1 3.77 1 4.71v7.57C1 13.23 1.77 14 2.71 14h11.57c.95 0 1.71-.77 1.71-1.71V4.71C16 3.77 15.23 3 14.29 3zm0 1.43L8.5 8.86 2.71 4.43h11.57z" fill="#d4943a" transform="scale(0.7)"/><text x="14" y="7.5" font-size="8" font-weight="400" fill="#4b5563">info@timelessrelocation.com</text></g>
+        <g transform="translate(412,130)"><circle cx="5" cy="-3" r="5" fill="#d4943a" opacity="0.1"/><path d="M8.5 1C5.46 1 3 3.46 3 6.5 3 10.88 8.5 16 8.5 16s5.5-5.12 5.5-9.5C14 3.46 11.54 1 8.5 1zm0 7.5c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z" fill="#d4943a" transform="scale(0.7)"/><text x="14" y="7.5" font-size="8" font-weight="400" fill="#4b5563">Bur Dubai, Dubai, UAE</text></g>
+        <g transform="translate(412,145)"><circle cx="5" cy="-3" r="5" fill="#d4943a" opacity="0.1"/><path d="M8.5 1C4.36 1 1 4.36 1 8.5S4.36 16 8.5 16 16 12.64 16 8.5 12.64 1 8.5 1zm0 13.5C5.19 14.5 2.5 11.81 2.5 8.5S5.19 2.5 8.5 2.5 14.5 5.19 14.5 8.5 11.81 14.5 8.5 14.5zm.54-9.25H7.75v4.29l3.75 2.25.54-.88-3.21-1.91V5.25z" fill="#d4943a" transform="scale(0.7)"/><text x="14" y="7.5" font-size="8" font-weight="400" fill="#4b5563">Mon – Sat · 8:00 AM – 6:00 PM</text></g>
+        <g transform="translate(412,160)"><circle cx="5" cy="-3" r="5" fill="#d4943a" opacity="0.1"/><path d="M8.5 1C4.36 1 1 4.36 1 8.5S4.36 16 8.5 16 16 12.64 16 8.5 12.64 1 8.5 1z" fill="#d4943a" transform="scale(0.7)"/><text x="14" y="7.5" font-size="8" font-weight="400" fill="#4b5563">timelessrelocation.com</text></g>
+        <image href="sample-2/Timeless_Logo.png" x="670" y="155" width="50" height="35" preserveAspectRatio="xMidYMid meet" opacity="0.07"/>
+      </svg>
+    </div>
+  </div>
+
+  <!-- ===== V2 ===== -->
+  <div class="card-section">
+    <div class="card-header">
+      <h2>Variation 2 — Clean White</h2>
+      <div class="tag">Modern</div>
+    </div>
+    <div class="card-specs">
+      <div class="spec">350gsm matte</div>
+      <div class="spec">Rounded corners 3mm</div>
+      <div class="spec">Full color CMYK</div>
+    </div>
+    <div class="card-svg-wrapper">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 210" width="740" height="210">
+        <defs>
+          <linearGradient id="v2ng" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#0f2b46"/><stop offset="100%" stop-color="#173a5c"/></linearGradient>
+          <linearGradient id="v2gg" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#d4943a"/><stop offset="50%" stop-color="#e8b36a"/><stop offset="100%" stop-color="#d4943a"/></linearGradient>
+          <clipPath id="v2fc"><rect x="10" y="10" width="340" height="189" rx="10"/></clipPath>
+          <clipPath id="v2bc"><rect x="390" y="10" width="340" height="189" rx="10"/></clipPath>
+          <filter id="v2s"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-opacity="0.1"/></filter>
+          <style>text{font-family:'Outfit',sans-serif}</style>
+        </defs>
+        <g filter="url(#v2s)"><rect x="10" y="10" width="340" height="189" rx="10" fill="#ffffff"/></g>
+        <rect x="10" y="194" width="340" height="5" fill="url(#v2ng)" clip-path="url(#v2fc)"/>
+        <image href="sample-2/Timeless_Logo.png" x="25" y="50" width="120" height="85" preserveAspectRatio="xMidYMid meet"/>
+        <text x="160" y="80" font-size="20" font-weight="800" fill="#0f2b46" letter-spacing="0.5">Timeless</text>
+        <text x="160" y="102" font-size="20" font-weight="800" fill="#d4943a" letter-spacing="0.5">Relocation</text>
+        <text x="160" y="120" font-size="6" font-weight="400" fill="#9ca3af" letter-spacing="2">THE WAY TO MOVE. THE WAY TO CARE.</text>
+        <g filter="url(#v2s)"><rect x="390" y="10" width="340" height="189" rx="10" fill="#0f2b46"/></g>
+        <rect x="390" y="10" width="340" height="4" rx="10" fill="url(#v2gg)" clip-path="url(#v2bc)"/>
+        <text x="412" y="46" font-size="15" font-weight="700" fill="#ffffff">Bilal Talib</text>
+        <text x="412" y="60" font-size="7.5" font-weight="500" fill="#e8b36a" letter-spacing="1.2">FOUNDER &amp; MANAGING DIRECTOR</text>
+        <line x1="412" y1="70" x2="490" y2="70" stroke="rgba(255,255,255,0.15)" stroke-width="0.7"/>
+        <g transform="translate(412,85)"><path d="M4.47 7.2c1.03 2.02 2.69 3.68 4.71 4.71l1.57-1.57c.19-.19.48-.26.73-.17.8.26 1.67.41 2.55.41.39 0 .71.32.71.71v2.5c0 .39-.32.71-.71.71C6.71 14.5 1.5 9.29 1.5 2.79c0-.39.32-.71.71-.71H4.71c.39 0 .71.32.71.71 0 .89.14 1.75.41 2.55.08.25.01.53-.17.73L4.47 7.2z" fill="#e8b36a" transform="scale(0.7)"/><text x="14" y="7.5" font-size="8" font-weight="400" fill="rgba(255,255,255,0.7)">+971 56 865 4794</text></g>
+        <g transform="translate(412,100)"><path d="M8.5 1C4.36 1 1 4.36 1 8.5c0 1.35.38 2.61 1.03 3.69L1 16l3.81-1.03A7.46 7.46 0 008.5 16C12.64 16 16 12.64 16 8.5S12.64 1 8.5 1z" fill="#25D366" transform="scale(0.7)"/><text x="14" y="7.5" font-size="8" font-weight="400" fill="rgba(255,255,255,0.7)">+971 56 865 4794</text></g>
+        <g transform="translate(412,115)"><path d="M14.29 3H2.71C1.77 3 1 3.77 1 4.71v7.57C1 13.23 1.77 14 2.71 14h11.57c.95 0 1.71-.77 1.71-1.71V4.71C16 3.77 15.23 3 14.29 3zm0 1.43L8.5 8.86 2.71 4.43h11.57z" fill="#e8b36a" transform="scale(0.7)"/><text x="14" y="7.5" font-size="8" font-weight="400" fill="rgba(255,255,255,0.7)">info@timelessrelocation.com</text></g>
+        <g transform="translate(412,130)"><path d="M8.5 1C5.46 1 3 3.46 3 6.5 3 10.88 8.5 16 8.5 16s5.5-5.12 5.5-9.5C14 3.46 11.54 1 8.5 1zm0 7.5c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z" fill="#e8b36a" transform="scale(0.7)"/><text x="14" y="7.5" font-size="8" font-weight="400" fill="rgba(255,255,255,0.7)">Bur Dubai, Dubai, UAE</text></g>
+        <g transform="translate(412,145)"><path d="M8.5 1C4.36 1 1 4.36 1 8.5S4.36 16 8.5 16 16 12.64 16 8.5 12.64 1 8.5 1zm0 13.5C5.19 14.5 2.5 11.81 2.5 8.5S5.19 2.5 8.5 2.5 14.5 5.19 14.5 8.5 11.81 14.5 8.5 14.5zm.54-9.25H7.75v4.29l3.75 2.25.54-.88-3.21-1.91V5.25z" fill="#e8b36a" transform="scale(0.7)"/><text x="14" y="7.5" font-size="8" font-weight="400" fill="rgba(255,255,255,0.7)">Mon – Sat · 8:00 AM – 6:00 PM</text></g>
+        <g transform="translate(412,160)"><path d="M8.5 1C4.36 1 1 4.36 1 8.5S4.36 16 8.5 16 16 12.64 16 8.5 12.64 1 8.5 1z" fill="#e8b36a" transform="scale(0.7)"/><text x="14" y="7.5" font-size="8" font-weight="400" fill="rgba(255,255,255,0.7)">timelessrelocation.com</text></g>
+        <image href="sample-2/Timeless_Logo.png" x="670" y="155" width="50" height="35" preserveAspectRatio="xMidYMid meet" opacity="0.05" style="filter:brightness(3)"/>
+      </svg>
+    </div>
+  </div>
+
+  <!-- ===== V3 ===== -->
+  <div class="card-section">
+    <div class="card-header">
+      <h2>Variation 3 — Luxury Gold Foil</h2>
+      <div class="tag">Premium</div>
+    </div>
+    <div class="card-specs">
+      <div class="spec">400gsm soft-touch</div>
+      <div class="spec">Gold foil stamping</div>
+      <div class="spec">Embossed logo</div>
+      <div class="spec">Corner ornaments</div>
+    </div>
+    <div class="card-svg-wrapper" style="background:#1a1a1a; border-color:#333;">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 210" width="740" height="210">
+        <defs>
+          <linearGradient id="v3ng" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#091e33"/><stop offset="40%" stop-color="#0f2b46"/><stop offset="100%" stop-color="#091e33"/></linearGradient>
+          <linearGradient id="v3gf" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#c4863a"/><stop offset="20%" stop-color="#f0d090"/><stop offset="40%" stop-color="#d4943a"/><stop offset="60%" stop-color="#f5e0a0"/><stop offset="80%" stop-color="#c4863a"/><stop offset="100%" stop-color="#e8b36a"/></linearGradient>
+          <clipPath id="v3fc"><rect x="10" y="10" width="340" height="189" rx="10"/></clipPath>
+          <clipPath id="v3bc"><rect x="390" y="10" width="340" height="189" rx="10"/></clipPath>
+          <filter id="v3s"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-opacity="0.2"/></filter>
+          <filter id="v3e"><feGaussianBlur in="SourceAlpha" stdDeviation="0.8" result="blur"/><feSpecularLighting in="blur" surfaceScale="3" specularConstant="0.6" specularExponent="15" result="spec"><fePointLight x="-100" y="-100" z="200"/></feSpecularLighting><feComposite in="spec" in2="SourceAlpha" operator="in" result="specOut"/><feComposite in="SourceGraphic" in2="specOut" operator="arithmetic" k1="0" k2="1" k3="1" k4="0"/></filter>
+          <style>text{font-family:'Outfit',sans-serif}</style>
+        </defs>
+        <g filter="url(#v3s)"><rect x="10" y="10" width="340" height="189" rx="10" fill="url(#v3ng)"/></g>
+        <rect x="22" y="22" width="316" height="165" rx="6" fill="none" stroke="url(#v3gf)" stroke-width="0.6" opacity="0.5"/>
+        <rect x="26" y="26" width="308" height="157" rx="4" fill="none" stroke="url(#v3gf)" stroke-width="0.3" opacity="0.3"/>
+        <g opacity="0.4"><line x1="22" y1="40" x2="22" y2="22" stroke="url(#v3gf)" stroke-width="1.5"/><line x1="22" y1="22" x2="40" y2="22" stroke="url(#v3gf)" stroke-width="1.5"/><line x1="320" y1="22" x2="338" y2="22" stroke="url(#v3gf)" stroke-width="1.5"/><line x1="338" y1="22" x2="338" y2="40" stroke="url(#v3gf)" stroke-width="1.5"/><line x1="22" y1="169" x2="22" y2="187" stroke="url(#v3gf)" stroke-width="1.5"/><line x1="22" y1="187" x2="40" y2="187" stroke="url(#v3gf)" stroke-width="1.5"/><line x1="320" y1="187" x2="338" y2="187" stroke="url(#v3gf)" stroke-width="1.5"/><line x1="338" y1="169" x2="338" y2="187" stroke="url(#v3gf)" stroke-width="1.5"/></g>
+        <image href="sample-2/Timeless_Logo.png" x="110" y="30" width="140" height="95" preserveAspectRatio="xMidYMid meet" style="filter:brightness(1.3)"/>
+        <line x1="140" y1="135" x2="220" y2="135" stroke="url(#v3gf)" stroke-width="0.8"/>
+        <circle cx="180" cy="135" r="1.5" fill="url(#v3gf)"/>
+        <text x="180" y="155" text-anchor="middle" font-size="6" font-weight="400" fill="url(#v3gf)" letter-spacing="3" filter="url(#v3e)">THE WAY TO MOVE. THE WAY TO CARE.</text>
+        <rect x="10" y="194" width="340" height="5" fill="url(#v3gf)" opacity="0.8" clip-path="url(#v3fc)"/>
+
+        <g filter="url(#v3s)"><rect x="390" y="10" width="340" height="189" rx="10" fill="url(#v3ng)"/></g>
+        <rect x="390" y="10" width="340" height="4" fill="url(#v3gf)" clip-path="url(#v3bc)"/>
+        <text x="420" y="44" font-size="16" font-weight="700" fill="url(#v3gf)" filter="url(#v3e)">Bilal Talib</text>
+        <text x="420" y="58" font-size="7" font-weight="400" fill="rgba(232,179,106,0.7)" letter-spacing="2">FOUNDER &amp; MANAGING DIRECTOR</text>
+        <line x1="420" y1="68" x2="498" y2="68" stroke="url(#v3gf)" stroke-width="0.5"/>
+        <g transform="translate(420,82)"><path d="M4.47 7.2c1.03 2.02 2.69 3.68 4.71 4.71l1.57-1.57c.19-.19.48-.26.73-.17.8.26 1.67.41 2.55.41.39 0 .71.32.71.71v2.5c0 .39-.32.71-.71.71C6.71 14.5 1.5 9.29 1.5 2.79c0-.39.32-.71.71-.71H4.71c.39 0 .71.32.71.71 0 .89.14 1.75.41 2.55.08.25.01.53-.17.73L4.47 7.2z" fill="url(#v3gf)" transform="scale(0.7)"/><text x="14" y="7.5" font-size="7.5" font-weight="300" fill="rgba(255,255,255,0.65)">+971 56 865 4794</text></g>
+        <g transform="translate(420,96)"><path d="M8.5 1C4.36 1 1 4.36 1 8.5c0 1.35.38 2.61 1.03 3.69L1 16l3.81-1.03A7.46 7.46 0 008.5 16C12.64 16 16 12.64 16 8.5S12.64 1 8.5 1z" fill="url(#v3gf)" transform="scale(0.7)"/><text x="14" y="7.5" font-size="7.5" font-weight="300" fill="rgba(255,255,255,0.65)">+971 56 865 4794</text></g>
+        <g transform="translate(420,110)"><path d="M14.29 3H2.71C1.77 3 1 3.77 1 4.71v7.57C1 13.23 1.77 14 2.71 14h11.57c.95 0 1.71-.77 1.71-1.71V4.71C16 3.77 15.23 3 14.29 3zm0 1.43L8.5 8.86 2.71 4.43h11.57z" fill="url(#v3gf)" transform="scale(0.7)"/><text x="14" y="7.5" font-size="7.5" font-weight="300" fill="rgba(255,255,255,0.65)">info@timelessrelocation.com</text></g>
+        <g transform="translate(420,124)"><path d="M8.5 1C5.46 1 3 3.46 3 6.5 3 10.88 8.5 16 8.5 16s5.5-5.12 5.5-9.5C14 3.46 11.54 1 8.5 1zm0 7.5c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z" fill="url(#v3gf)" transform="scale(0.7)"/><text x="14" y="7.5" font-size="7.5" font-weight="300" fill="rgba(255,255,255,0.65)">Bur Dubai, Dubai, UAE</text></g>
+        <g transform="translate(420,138)"><path d="M8.5 1C4.36 1 1 4.36 1 8.5S4.36 16 8.5 16 16 12.64 16 8.5 12.64 1 8.5 1zm0 13.5C5.19 14.5 2.5 11.81 2.5 8.5S5.19 2.5 8.5 2.5 14.5 5.19 14.5 8.5 11.81 14.5 8.5 14.5zm.54-9.25H7.75v4.29l3.75 2.25.54-.88-3.21-1.91V5.25z" fill="url(#v3gf)" transform="scale(0.7)"/><text x="14" y="7.5" font-size="7.5" font-weight="300" fill="rgba(255,255,255,0.65)">Mon – Sat · 8:00 AM – 6:00 PM</text></g>
+        <g transform="translate(420,152)"><path d="M8.5 1C4.36 1 1 4.36 1 8.5S4.36 16 8.5 16 16 12.64 16 8.5 12.64 1 8.5 1z" fill="url(#v3gf)" transform="scale(0.7)"/><text x="14" y="7.5" font-size="7.5" font-weight="300" fill="rgba(255,255,255,0.65)">timelessrelocation.com</text></g>
+        <image href="sample-2/Timeless_Logo.png" x="680" y="158" width="40" height="28" preserveAspectRatio="xMidYMid meet" opacity="0.04" style="filter:brightness(2)"/>
+        <rect x="390" y="194" width="340" height="5" fill="url(#v3gf)" opacity="0.8" clip-path="url(#v3bc)"/>
+      </svg>
+    </div>
+  </div>
+
+  <!-- ===== V4 ===== -->
+  <div class="card-section">
+    <div class="card-header">
+      <h2>Variation 4 — Cream Letterpress</h2>
+      <div class="tag">Artisan</div>
+    </div>
+    <div class="card-specs">
+      <div class="spec">600gsm cotton paper</div>
+      <div class="spec">Letterpress debossed</div>
+      <div class="spec">Gold foil tagline</div>
+      <div class="spec">Edge painting</div>
+    </div>
+    <div class="card-svg-wrapper">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 300" width="740" height="300">
+        <defs>
+          <linearGradient id="v4gf" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#b8842e"/><stop offset="15%" stop-color="#f0d090"/><stop offset="35%" stop-color="#d4943a"/><stop offset="55%" stop-color="#f5e0a0"/><stop offset="75%" stop-color="#c4863a"/><stop offset="100%" stop-color="#e8b36a"/></linearGradient>
+          <linearGradient id="v4cg" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#fdf8f0"/><stop offset="100%" stop-color="#f8f0e0"/></linearGradient>
+          <filter id="v4d"><feGaussianBlur in="SourceAlpha" stdDeviation="0.5" result="blur"/><feOffset in="blur" dx="0.5" dy="0.5" result="ob"/><feFlood flood-color="#000" flood-opacity="0.15"/><feComposite in2="ob" operator="in" result="sh"/><feOffset in="SourceAlpha" dx="-0.3" dy="-0.3" result="ho"/><feGaussianBlur in="ho" stdDeviation="0.3" result="hb"/><feFlood flood-color="#fff" flood-opacity="0.3"/><feComposite in2="hb" operator="in" result="hl"/><feMerge><feMergeNode in="sh"/><feMergeNode in="hl"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+          <pattern id="v4c" patternUnits="userSpaceOnUse" width="6" height="6"><rect width="6" height="6" fill="transparent"/><circle cx="1" cy="2" r="0.2" fill="rgba(180,160,130,0.06)"/><circle cx="4" cy="5" r="0.15" fill="rgba(180,160,130,0.05)"/><circle cx="2" cy="4" r="0.25" fill="rgba(180,160,130,0.04)"/><circle cx="5" cy="1" r="0.2" fill="rgba(180,160,130,0.06)"/></pattern>
+          <filter id="v4s" x="-5%" y="-5%" width="115%" height="115%"><feDropShadow dx="0" dy="4" stdDeviation="8" flood-opacity="0.12" flood-color="#000"/></filter>
+          <clipPath id="v4fc"><rect x="10" y="10" width="340" height="189" rx="10"/></clipPath>
+          <clipPath id="v4bc"><rect x="390" y="10" width="340" height="189" rx="10"/></clipPath>
+          <style>text{font-family:'Outfit',sans-serif}</style>
+        </defs>
+        <g filter="url(#v4s)"><rect x="10" y="10" width="340" height="189" rx="10" fill="url(#v4cg)"/></g>
+        <rect x="10" y="10" width="340" height="189" rx="10" fill="url(#v4c)" clip-path="url(#v4fc)"/>
+        <rect x="24" y="24" width="312" height="161" rx="5" fill="none" stroke="rgba(180,160,130,0.15)" stroke-width="0.5"/>
+        <image href="sample-2/Timeless_Logo.png" x="110" y="30" width="140" height="95" preserveAspectRatio="xMidYMid meet"/>
+        <line x1="145" y1="132" x2="215" y2="132" stroke="rgba(180,160,130,0.3)" stroke-width="0.5"/>
+        <text x="180" y="152" text-anchor="middle" font-size="10" font-weight="700" fill="#0f2b46" filter="url(#v4d)" letter-spacing="3">MUHAMMAD BILAL</text>
+        <text x="180" y="166" text-anchor="middle" font-size="6" font-weight="400" fill="#9c8c74" letter-spacing="2" filter="url(#v4d)">FOUNDER &amp; MANAGING DIRECTOR</text>
+        <text x="180" y="183" text-anchor="middle" font-size="5.5" font-weight="400" fill="url(#v4gf)" letter-spacing="2">THE WAY TO MOVE. THE WAY TO CARE.</text>
+        <g filter="url(#v4s)"><rect x="390" y="10" width="340" height="189" rx="10" fill="url(#v4cg)"/></g>
+        <rect x="390" y="10" width="340" height="189" rx="10" fill="url(#v4c)" clip-path="url(#v4bc)"/>
+        <rect x="390" y="10" width="340" height="3" fill="url(#v4gf)" clip-path="url(#v4bc)"/>
+        <rect x="404" y="24" width="312" height="161" rx="5" fill="none" stroke="rgba(180,160,130,0.15)" stroke-width="0.5"/>
+        <image href="sample-2/Timeless_Logo.png" x="525" y="28" width="45" height="32" preserveAspectRatio="xMidYMid meet" opacity="0.15"/>
+        <g filter="url(#v4d)">
+          <g transform="translate(420,50)"><path d="M4.47 7.2c1.03 2.02 2.69 3.68 4.71 4.71l1.57-1.57c.19-.19.48-.26.73-.17.8.26 1.67.41 2.55.41.39 0 .71.32.71.71v2.5c0 .39-.32.71-.71.71C6.71 14.5 1.5 9.29 1.5 2.79c0-.39.32-.71.71-.71H4.71c.39 0 .71.32.71.71 0 .89.14 1.75.41 2.55.08.25.01.53-.17.73L4.47 7.2z" fill="#9c8c74" transform="scale(0.7)"/><text x="14" y="8" font-size="7.5" font-weight="400" fill="#5a4d3a" letter-spacing="0.5">+971 56 865 4794</text><text x="130" y="8" font-size="6" font-weight="300" fill="#9c8c74">PHONE</text></g>
+          <line x1="420" y1="66" x2="700" y2="66" stroke="rgba(180,160,130,0.15)" stroke-width="0.3"/>
+          <g transform="translate(420,76)"><path d="M8.5 1C4.36 1 1 4.36 1 8.5c0 1.35.38 2.61 1.03 3.69L1 16l3.81-1.03A7.46 7.46 0 008.5 16C12.64 16 16 12.64 16 8.5S12.64 1 8.5 1z" fill="#9c8c74" transform="scale(0.7)"/><text x="14" y="8" font-size="7.5" font-weight="400" fill="#5a4d3a" letter-spacing="0.5">+971 56 865 4794</text><text x="130" y="8" font-size="6" font-weight="300" fill="#9c8c74">WHATSAPP</text></g>
+          <line x1="420" y1="92" x2="700" y2="92" stroke="rgba(180,160,130,0.15)" stroke-width="0.3"/>
+          <g transform="translate(420,102)"><path d="M14.29 3H2.71C1.77 3 1 3.77 1 4.71v7.57C1 13.23 1.77 14 2.71 14h11.57c.95 0 1.71-.77 1.71-1.71V4.71C16 3.77 15.23 3 14.29 3zm0 1.43L8.5 8.86 2.71 4.43h11.57z" fill="#9c8c74" transform="scale(0.7)"/><text x="14" y="8" font-size="7.5" font-weight="400" fill="#5a4d3a" letter-spacing="0.5">info@timelessrelocation.com</text><text x="180" y="8" font-size="6" font-weight="300" fill="#9c8c74">EMAIL</text></g>
+          <line x1="420" y1="118" x2="700" y2="118" stroke="rgba(180,160,130,0.15)" stroke-width="0.3"/>
+          <g transform="translate(420,128)"><path d="M8.5 1C5.46 1 3 3.46 3 6.5 3 10.88 8.5 16 8.5 16s5.5-5.12 5.5-9.5C14 3.46 11.54 1 8.5 1zm0 7.5c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z" fill="#9c8c74" transform="scale(0.7)"/><text x="14" y="8" font-size="7.5" font-weight="400" fill="#5a4d3a" letter-spacing="0.5">Bur Dubai, Dubai, UAE</text><text x="130" y="8" font-size="6" font-weight="300" fill="#9c8c74">LOCATION</text></g>
+          <line x1="420" y1="144" x2="700" y2="144" stroke="rgba(180,160,130,0.15)" stroke-width="0.3"/>
+          <g transform="translate(420,154)"><path d="M8.5 1C4.36 1 1 4.36 1 8.5S4.36 16 8.5 16 16 12.64 16 8.5 12.64 1 8.5 1zm0 13.5C5.19 14.5 2.5 11.81 2.5 8.5S5.19 2.5 8.5 2.5 14.5 5.19 14.5 8.5 11.81 14.5 8.5 14.5zm.54-9.25H7.75v4.29l3.75 2.25.54-.88-3.21-1.91V5.25z" fill="#9c8c74" transform="scale(0.7)"/><text x="14" y="8" font-size="7.5" font-weight="400" fill="#5a4d3a" letter-spacing="0.5">Mon – Sat · 8:00 AM – 6:00 PM</text><text x="195" y="8" font-size="6" font-weight="300" fill="#9c8c74">HOURS</text></g>
+          <line x1="420" y1="170" x2="700" y2="170" stroke="rgba(180,160,130,0.15)" stroke-width="0.3"/>
+          <g transform="translate(420,180)"><path d="M8.5 1C4.36 1 1 4.36 1 8.5S4.36 16 8.5 16 16 12.64 16 8.5 12.64 1 8.5 1z" fill="#9c8c74" transform="scale(0.7)"/><text x="14" y="8" font-size="7.5" font-weight="400" fill="#5a4d3a" letter-spacing="0.5">timelessrelocation.com</text><text x="130" y="8" font-size="6" font-weight="300" fill="#9c8c74">WEBSITE</text></g>
+        </g>
+        <rect x="390" y="196" width="340" height="3" fill="url(#v4gf)" clip-path="url(#v4bc)"/>
+      </svg>
+    </div>
+  </div>
+
+  <!-- ===== V5 ===== -->
+  <div class="card-section" style="background:#0a0a0a; border-color:#333;">
+    <div class="card-header">
+      <h2 style="color:#e8b36a;">Variation 5 — Black Spot UV + Gold Foil</h2>
+      <div class="tag" style="background:#e8b36a; color:#0a0a0a;">Ultra Premium</div>
+    </div>
+    <div class="card-specs">
+      <div class="spec" style="background:#1a1a1a; color:#ccc; border-color:#333;">450gsm soft-touch matte black</div>
+      <div class="spec" style="background:#1a1a1a; color:#ccc; border-color:#333;">Spot UV glossy logo</div>
+      <div class="spec" style="background:#1a1a1a; color:#ccc; border-color:#333;">Gold foil stamping</div>
+      <div class="spec" style="background:#1a1a1a; color:#ccc; border-color:#333;">Gold edge painting</div>
+    </div>
+    <div class="card-svg-wrapper" style="background:#000000; border-color:#333;">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 210" width="740" height="210">
+        <defs>
+          <linearGradient id="v5gf" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#b8842e"/><stop offset="20%" stop-color="#f0d090"/><stop offset="40%" stop-color="#d4943a"/><stop offset="60%" stop-color="#f5e0a0"/><stop offset="80%" stop-color="#c4863a"/><stop offset="100%" stop-color="#e8b36a"/></linearGradient>
+          <linearGradient id="v5bg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#0a0a0a"/><stop offset="50%" stop-color="#1a1a1a"/><stop offset="100%" stop-color="#0a0a0a"/></linearGradient>
+          <filter id="v5s" x="-5%" y="-5%" width="115%" height="115%"><feDropShadow dx="0" dy="4" stdDeviation="8" flood-opacity="0.3" flood-color="#000"/></filter>
+          <filter id="v5uv"><feGaussianBlur in="SourceAlpha" stdDeviation="1" result="blur"/><feSpecularLighting in="blur" surfaceScale="5" specularConstant="1" specularExponent="20" result="spec"><fePointLight x="200" y="-100" z="300"/></feSpecularLighting><feComposite in="spec" in2="SourceAlpha" operator="in" result="specOut"/><feComposite in="SourceGraphic" in2="specOut" operator="arithmetic" k1="0" k2="1" k3="0.5" k4="0"/></filter>
+          <clipPath id="v5fc"><rect x="10" y="10" width="340" height="189" rx="10"/></clipPath>
+          <clipPath id="v5bc"><rect x="390" y="10" width="340" height="189" rx="10"/></clipPath>
+          <style>text{font-family:'Outfit',sans-serif}</style>
+        </defs>
+        <!-- Front -->
+        <g filter="url(#v5s)"><rect x="10" y="10" width="340" height="189" rx="10" fill="url(#v5bg)"/></g>
+        <rect x="10" y="10" width="340" height="3" fill="url(#v5gf)" clip-path="url(#v5fc)"/>
+        <image href="sample-2/Timeless_Logo.png" x="110" y="25" width="140" height="95" preserveAspectRatio="xMidYMid meet" style="filter:brightness(1.4)" filter="url(#v5uv)"/>
+        <text x="180" y="145" text-anchor="middle" font-size="10" font-weight="700" fill="url(#v5gf)" letter-spacing="3">MUHAMMAD BILAL</text>
+        <text x="180" y="160" text-anchor="middle" font-size="6" font-weight="400" fill="#888" letter-spacing="2">FOUNDER &amp; MANAGING DIRECTOR</text>
+        <text x="180" y="183" text-anchor="middle" font-size="5.5" font-weight="400" fill="url(#v5gf)" letter-spacing="2" opacity="0.7">THE WAY TO MOVE. THE WAY TO CARE.</text>
+        <!-- Back -->
+        <g filter="url(#v5s)"><rect x="390" y="10" width="340" height="189" rx="10" fill="url(#v5bg)"/></g>
+        <rect x="390" y="10" width="340" height="3" fill="url(#v5gf)" clip-path="url(#v5bc)"/>
+        <g transform="translate(412,40)"><path d="M4.47 7.2c1.03 2.02 2.69 3.68 4.71 4.71l1.57-1.57c.19-.19.48-.26.73-.17.8.26 1.67.41 2.55.41.39 0 .71.32.71.71v2.5c0 .39-.32.71-.71.71C6.71 14.5 1.5 9.29 1.5 2.79c0-.39.32-.71.71-.71H4.71c.39 0 .71.32.71.71 0 .89.14 1.75.41 2.55.08.25.01.53-.17.73L4.47 7.2z" fill="#e8b36a" transform="scale(0.75)"/><text x="16" y="8" font-size="8" font-weight="400" fill="rgba(255,255,255,0.75)">+971 56 865 4794</text></g>
+        <g transform="translate(412,57)"><path d="M8.5 1C4.36 1 1 4.36 1 8.5c0 1.35.38 2.61 1.03 3.69L1 16l3.81-1.03A7.46 7.46 0 008.5 16C12.64 16 16 12.64 16 8.5S12.64 1 8.5 1z" fill="#e8b36a" transform="scale(0.75)"/><text x="16" y="8" font-size="8" font-weight="400" fill="rgba(255,255,255,0.75)">+971 56 865 4794</text></g>
+        <g transform="translate(412,74)"><path d="M14.29 3H2.71C1.77 3 1 3.77 1 4.71v7.57C1 13.23 1.77 14 2.71 14h11.57c.95 0 1.71-.77 1.71-1.71V4.71C16 3.77 15.23 3 14.29 3zm0 1.43L8.5 8.86 2.71 4.43h11.57z" fill="#e8b36a" transform="scale(0.75)"/><text x="16" y="8" font-size="8" font-weight="400" fill="rgba(255,255,255,0.75)">info@timelessrelocation.com</text></g>
+        <g transform="translate(412,91)"><path d="M8.5 1C5.46 1 3 3.46 3 6.5 3 10.88 8.5 16 8.5 16s5.5-5.12 5.5-9.5C14 3.46 11.54 1 8.5 1zm0 7.5c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z" fill="#e8b36a" transform="scale(0.75)"/><text x="16" y="8" font-size="8" font-weight="400" fill="rgba(255,255,255,0.75)">Bur Dubai, Dubai, UAE</text></g>
+        <g transform="translate(412,108)"><path d="M8.5 1C4.36 1 1 4.36 1 8.5S4.36 16 8.5 16 16 12.64 16 8.5 12.64 1 8.5 1zm0 13.5C5.19 14.5 2.5 11.81 2.5 8.5S5.19 2.5 8.5 2.5 14.5 5.19 14.5 8.5 11.81 14.5 8.5 14.5zm.54-9.25H7.75v4.29l3.75 2.25.54-.88-3.21-1.91V5.25z" fill="#e8b36a" transform="scale(0.75)"/><text x="16" y="8" font-size="8" font-weight="400" fill="rgba(255,255,255,0.75)">Mon – Sat · 8:00 AM – 6:00 PM</text></g>
+        <g transform="translate(412,125)"><path d="M8.5 1C4.36 1 1 4.36 1 8.5S4.36 16 8.5 16 16 12.64 16 8.5 12.64 1 8.5 1z" fill="#e8b36a" transform="scale(0.75)"/><text x="16" y="8" font-size="8" font-weight="400" fill="rgba(255,255,255,0.75)">timelessrelocation.com</text></g>
+        <image href="sample-2/Timeless_Logo.png" x="670" y="150" width="50" height="35" preserveAspectRatio="xMidYMid meet" opacity="0.06" style="filter:brightness(2)"/>
+        <rect x="390" y="196" width="340" height="3" fill="url(#v5gf)" clip-path="url(#v5bc)"/>
+      </svg>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div class="footer-logo">
+    <img src="quartermasters-logo.avif" alt="Quartermasters FZC">
+    <div class="name">Quarter<span>masters</span> FZC</div>
+  </div>
+  <div class="footer-tagline">Digital Solutions &amp; Branding &middot; Ajman, UAE</div>
+  <div class="footer-contact">
+    <a href="mailto:hello@quartermasters.me">hello@quartermasters.me</a>
+    <a href="https://quartermasters.me">quartermasters.me</a>
+  </div>
+  <div class="footer-copy">Confidential &middot; Prepared for <span>Timeless Relocation</span> &middot; March 2026</div>
+</div>
+
+</body>
+</html>

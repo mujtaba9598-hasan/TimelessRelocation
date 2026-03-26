@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Email Account Details — Timeless Relocation</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    @page { size: A4; margin: 0; }
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: #E8E0D8;
+      color: #1a1a1a;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 20px auto;
+      background: #FFFFFF;
+      box-shadow: 0 4px 40px rgba(0,0,0,0.12);
+      position: relative;
+      overflow: hidden;
+    }
+    @media print {
+      body { background: #fff; }
+      .page { margin: 0; box-shadow: none; }
+      .page-break { page-break-before: always; break-before: page; }
+    }
+    :root {
+      --qm-orange: #C25A1C;
+      --qm-dark: #1a1a1a;
+      --qm-light: #F7F5F2;
+      --qm-border: #E5E1DC;
+      --qm-muted: #6B7280;
+    }
+    .top-stripe {
+      height: 6px;
+      background: linear-gradient(90deg, var(--qm-orange), #E8920D, var(--qm-orange));
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 24px 40px 16px;
+    }
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .header-left img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    .header-left .company-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--qm-orange);
+    }
+    .header-left .company-sub {
+      font-size: 9px;
+      color: var(--qm-muted);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-top: 2px;
+    }
+    .header-right {
+      text-align: right;
+      font-size: 10px;
+      color: var(--qm-muted);
+      line-height: 1.8;
+    }
+    .title-bar {
+      background: var(--qm-orange);
+      color: #fff;
+      padding: 8px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .title-bar h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+    .title-meta {
+      font-size: 9px;
+      text-align: right;
+      line-height: 1.5;
+      opacity: 0.9;
+    }
+    .section {
+      padding: 14px 40px 0;
+    }
+    .section-heading {
+      font-size: 8px;
+      text-transform: uppercase;
+      letter-spacing: 2.5px;
+      color: var(--qm-orange);
+      font-weight: 700;
+      margin-bottom: 8px;
+      padding-bottom: 4px;
+      border-bottom: 1.5px solid var(--qm-border);
+    }
+    .detail-card {
+      background: var(--qm-light);
+      border-radius: 6px;
+      padding: 10px 14px;
+      border-left: 3px solid var(--qm-orange);
+      margin-bottom: 8px;
+    }
+    .detail-card .label {
+      font-size: 7.5px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--qm-orange);
+      font-weight: 700;
+      margin-bottom: 3px;
+    }
+    .detail-card .value {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--qm-dark);
+      font-family: 'Courier New', monospace;
+      letter-spacing: 0.5px;
+      word-break: break-all;
+    }
+    .detail-card .note {
+      font-size: 8px;
+      color: var(--qm-muted);
+      margin-top: 3px;
+    }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
+    .warn-box {
+      background: #FEF3CD;
+      border-radius: 6px;
+      padding: 10px 14px;
+      border-left: 3px solid #F59E0B;
+      margin-top: 8px;
+    }
+    .warn-box .label {
+      font-size: 7.5px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #B45309;
+      font-weight: 700;
+      margin-bottom: 3px;
+    }
+    .warn-box p {
+      font-size: 9px;
+      color: #92400E;
+      line-height: 1.5;
+    }
+    .guide-card {
+      border: 1px solid var(--qm-border);
+      border-radius: 8px;
+      padding: 12px 14px;
+      margin-bottom: 8px;
+    }
+    .guide-card .guide-title {
+      font-size: 9px;
+      font-weight: 700;
+      color: var(--qm-dark);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 6px;
+      padding-bottom: 4px;
+      border-bottom: 1px solid var(--qm-border);
+    }
+    .guide-card .guide-title .icon {
+      display: inline-block;
+      background: var(--qm-orange);
+      color: #fff;
+      font-size: 7px;
+      padding: 2px 6px;
+      border-radius: 3px;
+      margin-right: 6px;
+      letter-spacing: 0;
+      text-transform: none;
+      font-weight: 600;
+    }
+    .guide-card ol {
+      list-style: none;
+      padding: 0;
+      counter-reset: gs;
+    }
+    .guide-card ol li {
+      font-size: 8.5px;
+      color: #333;
+      line-height: 1.5;
+      padding: 3px 0 3px 20px;
+      position: relative;
+      counter-increment: gs;
+    }
+    .guide-card ol li::before {
+      content: counter(gs);
+      position: absolute;
+      left: 0;
+      top: 3px;
+      width: 14px;
+      height: 14px;
+      background: var(--qm-orange);
+      color: #fff;
+      border-radius: 50%;
+      font-size: 7px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .footer {
+      margin-top: 14px;
+      border-top: 1.5px solid var(--qm-border);
+      padding: 10px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 9px;
+      color: var(--qm-muted);
+    }
+    .footer a {
+      color: var(--qm-orange);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .bottom-stripe {
+      height: 6px;
+      background: linear-gradient(90deg, var(--qm-orange), #E8920D, var(--qm-orange));
+    }
+    .print-btn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: var(--qm-orange);
+      color: #fff;
+      border: none;
+      padding: 14px 28px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 4px 20px rgba(194,90,28,0.4);
+      z-index: 100;
+    }
+    .print-btn:hover { background: #A84B16; }
+    @media print { .print-btn { display: none; } }
+  </style>
+</head>
+<body>
+
+<div class="page">
+  <div class="top-stripe"></div>
+
+  <div class="header">
+    <div class="header-left">
+      <img src="quartermasters-logo.avif" alt="Quartermasters FZC Logo">
+      <div>
+        <div class="company-name">Quartermasters FZC</div>
+        <div class="company-sub">Digital Solutions &amp; Branding</div>
+      </div>
+    </div>
+    <div class="header-right">
+      <strong style="color: #fff; background: #DC2626; padding: 2px 8px; border-radius: 4px; font-size: 9px; letter-spacing: 1px; text-transform: uppercase;">Confidential Document</strong><br>
+      For: Mr. Bilal Talib<br>
+      Date: 26 March 2026
+    </div>
+  </div>
+
+  <div class="title-bar">
+    <h1>EMAIL ACCOUNT SETUP</h1>
+    <div class="title-meta">
+      Timeless Relocation<br>
+      info@timelessrelocation.com
+    </div>
+  </div>
+
+  <!-- Account Details -->
+  <div class="section">
+    <div class="section-heading">Your Email Account</div>
+    <div class="grid-3">
+      <div class="detail-card">
+        <div class="label">Email Address</div>
+        <div class="value">info@timelessrelocation.com</div>
+      </div>
+      <div class="detail-card" style="border-left-color: #F59E0B; background: #FEF3CD;">
+        <div class="label" style="color: #B45309;">Password</div>
+        <div class="value" style="font-family: 'Inter', sans-serif; font-size: 10px; color: #92400E;">Will be shared separately via WhatsApp</div>
+      </div>
+      <div class="detail-card">
+        <div class="label">Domain</div>
+        <div class="value">timelessrelocation.com</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Server Settings -->
+  <div class="section">
+    <div class="section-heading">Server Settings</div>
+    <div class="grid-3">
+      <div class="detail-card">
+        <div class="label">IMAP (Incoming)</div>
+        <div class="value">imap.hostinger.com</div>
+        <div class="note">Port: 993 &nbsp;|&nbsp; Encryption: SSL</div>
+      </div>
+      <div class="detail-card">
+        <div class="label">POP3 (Incoming)</div>
+        <div class="value">pop.hostinger.com</div>
+        <div class="note">Port: 995 &nbsp;|&nbsp; Encryption: SSL</div>
+      </div>
+      <div class="detail-card">
+        <div class="label">SMTP (Outgoing)</div>
+        <div class="value">smtp.hostinger.com</div>
+        <div class="note">Port: 465 &nbsp;|&nbsp; Encryption: SSL</div>
+      </div>
+    </div>
+    <div class="grid-2" style="margin-top: 8px;">
+      <div class="detail-card">
+        <div class="label">Username</div>
+        <div class="value">info@timelessrelocation.com</div>
+      </div>
+      <div class="detail-card">
+        <div class="label">Authentication</div>
+        <div class="value">Password (Normal)</div>
+        <div class="note">Use same password as email login</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Setup Guides - 2 column layout -->
+  <div class="section">
+    <div class="section-heading">Setup Guides</div>
+    <div class="grid-2">
+
+      <!-- Outlook Desktop -->
+      <div class="guide-card">
+        <div class="guide-title"><span class="icon">Desktop</span> Microsoft Outlook</div>
+        <ol>
+          <li><strong>File</strong> &rarr; <strong>Add Account</strong></li>
+          <li>Enter email: <strong>info@timelessrelocation.com</strong></li>
+          <li>Select <strong>IMAP</strong></li>
+          <li>Incoming: <strong>imap.hostinger.com</strong> | Port <strong>993</strong> | SSL</li>
+          <li>Outgoing: <strong>smtp.hostinger.com</strong> | Port <strong>465</strong> | SSL</li>
+          <li>Enter password &rarr; <strong>Connect</strong></li>
+          <li>Test by sending yourself an email</li>
+        </ol>
+      </div>
+
+      <!-- Outlook Mobile -->
+      <div class="guide-card">
+        <div class="guide-title"><span class="icon">Mobile</span> Outlook App (Android / iOS)</div>
+        <ol>
+          <li>Download <strong>Microsoft Outlook</strong> from Store</li>
+          <li>Tap <strong>Add Account</strong></li>
+          <li>Enter email: <strong>info@timelessrelocation.com</strong></li>
+          <li>Select <strong>IMAP</strong></li>
+          <li>Incoming: <strong>imap.hostinger.com</strong> | Port <strong>993</strong> | SSL</li>
+          <li>Outgoing: <strong>smtp.hostinger.com</strong> | Port <strong>465</strong> | SSL</li>
+          <li>Enter password &rarr; <strong>Sign In</strong></li>
+          <li>Test by sending yourself an email</li>
+        </ol>
+      </div>
+
+      <!-- Samsung Email -->
+      <div class="guide-card">
+        <div class="guide-title"><span class="icon">Android</span> Samsung Email App</div>
+        <ol>
+          <li>Open <strong>Samsung Email</strong> or Settings &rarr; Accounts</li>
+          <li>Tap <strong>Other</strong></li>
+          <li>Enter email &amp; password</li>
+          <li>Select <strong>IMAP Account</strong></li>
+          <li>Incoming: <strong>imap.hostinger.com</strong> | Port <strong>993</strong> | SSL</li>
+          <li>Outgoing: <strong>smtp.hostinger.com</strong> | Port <strong>465</strong> | SSL</li>
+          <li>Username: <strong>info@timelessrelocation.com</strong> for both</li>
+          <li>Display name: <strong>Timeless Relocation</strong> &rarr; Done</li>
+        </ol>
+      </div>
+
+      <!-- iPhone / iPad -->
+      <div class="guide-card">
+        <div class="guide-title"><span class="icon">iOS</span> iPhone / iPad (Apple Mail)</div>
+        <ol>
+          <li><strong>Settings</strong> &rarr; <strong>Mail</strong> &rarr; <strong>Accounts</strong> &rarr; <strong>Add</strong></li>
+          <li>Tap <strong>Other</strong> &rarr; <strong>Add Mail Account</strong></li>
+          <li>Name: <strong>Timeless Relocation</strong>, enter email &amp; password</li>
+          <li>Select <strong>IMAP</strong></li>
+          <li>Incoming: <strong>imap.hostinger.com</strong></li>
+          <li>Outgoing: <strong>smtp.hostinger.com</strong></li>
+          <li>Username: <strong>info@timelessrelocation.com</strong> for both</li>
+          <li>Tap <strong>Next</strong> &rarr; Verify &rarr; <strong>Save</strong></li>
+        </ol>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Warning -->
+  <div class="section">
+    <div class="warn-box">
+      <div class="label">Important</div>
+      <p>Keep this document safe. Do not share your password with anyone. If you need to change your password or require additional email accounts (e.g. sales@, accounts@), contact us at hello@quartermasters.me.</p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <div>
+      Setup support included &mdash; <a href="mailto:hello@quartermasters.me">hello@quartermasters.me</a>
+    </div>
+    <div>
+      <a href="https://quartermasters.me" target="_blank" rel="noopener noreferrer">Quartermasters FZC</a>
+    </div>
+  </div>
+
+  <div class="bottom-stripe"></div>
+</div>
+
+<button class="print-btn" onclick="window.print()">Print / Save PDF</button>
+
+</body>
+</html>

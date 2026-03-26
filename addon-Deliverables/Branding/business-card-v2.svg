@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-190 -150 1120 600" width="297mm" height="210mm" style="display:block;margin:auto">
+  <defs>
+    <linearGradient id="navyGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0f2b46"/>
+      <stop offset="100%" stop-color="#173a5c"/>
+    </linearGradient>
+    <linearGradient id="goldGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#d4943a"/>
+      <stop offset="50%" stop-color="#e8b36a"/>
+      <stop offset="100%" stop-color="#d4943a"/>
+    </linearGradient>
+    <clipPath id="frontClip2"><rect x="10" y="10" width="340" height="189" rx="10"/></clipPath>
+    <clipPath id="backClip2"><rect x="390" y="10" width="340" height="189" rx="10"/></clipPath>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800');
+      text { font-family: 'Outfit', sans-serif; }
+    </style>
+    <filter id="shadow2" x="-5%" y="-5%" width="115%" height="115%">
+      <feDropShadow dx="0" dy="3" stdDeviation="6" flood-opacity="0.12" flood-color="#000"/>
+    </filter>
+  </defs>
+
+  <!-- Full page background -->
+  <rect x="-190" y="-150" width="1120" height="600" fill="#d4d4d4"/>
+
+  <!-- ===== FRONT CARD (White) ===== -->
+  <g filter="url(#shadow2)">
+    <rect x="10" y="10" width="340" height="189" rx="10" fill="#ffffff"/>
+  </g>
+  <!-- Navy bottom accent -->
+  <rect x="10" y="194" width="340" height="5" rx="0" fill="url(#navyGrad2)" clip-path="url(#frontClip2)"/>
+
+  <!-- Logo -->
+  <image href="../sample-2/Timeless_Logo.png" x="25" y="50" width="120" height="85" preserveAspectRatio="xMidYMid meet"/>
+
+  <!-- Company name -->
+  <g transform="translate(160, 65)">
+    <text x="0" y="0" font-size="20" font-weight="800" fill="#0f2b46" letter-spacing="0.5">Timeless</text>
+    <text x="0" y="22" font-size="20" font-weight="800" fill="#d4943a" letter-spacing="0.5">Relocation</text>
+    <text x="0" y="40" font-size="6" font-weight="400" fill="#9ca3af" letter-spacing="2">THE WAY TO MOVE. THE WAY TO CARE.</text>
+  </g>
+
+  <!-- Label -->
+  <text x="180" y="220" text-anchor="middle" font-size="10" font-weight="500" fill="#9ca3af">Front</text>
+
+
+  <!-- ===== BACK CARD (Dark) ===== -->
+  <g filter="url(#shadow2)">
+    <rect x="390" y="10" width="340" height="189" rx="10" fill="#0f2b46"/>
+  </g>
+  <!-- Gold top accent -->
+  <rect x="390" y="10" width="340" height="4" rx="10" fill="url(#goldGrad2)" clip-path="url(#backClip2)"/>
+
+  <!-- Name -->
+  <text x="412" y="46" font-size="15" font-weight="700" fill="#ffffff">Bilal Talib</text>
+  <!-- Title -->
+  <text x="412" y="60" font-size="7.5" font-weight="500" fill="#e8b36a" letter-spacing="1.2">FOUNDER &amp; MANAGING DIRECTOR</text>
+  <!-- Divider -->
+  <line x1="412" y1="70" x2="490" y2="70" stroke="rgba(255,255,255,0.15)" stroke-width="0.7"/>
+
+  <!-- Phone -->
+  <g transform="translate(412, 85)">
+    <path d="M4.47 7.2c1.03 2.02 2.69 3.68 4.71 4.71l1.57-1.57c.19-.19.48-.26.73-.17.8.26 1.67.41 2.55.41.39 0 .71.32.71.71v2.5c0 .39-.32.71-.71.71C6.71 14.5 1.5 9.29 1.5 2.79c0-.39.32-.71.71-.71H4.71c.39 0 .71.32.71.71 0 .89.14 1.75.41 2.55.08.25.01.53-.17.73L4.47 7.2z" fill="#e8b36a" transform="scale(0.75)"/>
+    <text x="16" y="8" font-size="8" font-weight="400" fill="rgba(255,255,255,0.75)">+971 56 865 4794</text>
+  </g>
+
+  <!-- WhatsApp -->
+  <g transform="translate(412, 102)">
+    <path d="M8.5 1C4.36 1 1 4.36 1 8.5c0 1.35.38 2.61 1.03 3.69L1 16l3.81-1.03A7.46 7.46 0 008.5 16C12.64 16 16 12.64 16 8.5S12.64 1 8.5 1zm0 13.5a5.97 5.97 0 01-3.18-.92l-.19-.11-2.15.64.64-2.15-.12-.2A5.97 5.97 0 012.5 8.5C2.5 5.19 5.19 2.5 8.5 2.5S14.5 5.19 14.5 8.5 11.81 14.5 8.5 14.5z" fill="#e8b36a" transform="scale(0.75)"/>
+    <text x="16" y="8" font-size="8" font-weight="400" fill="rgba(255,255,255,0.75)">+971 56 865 4794</text>
+  </g>
+
+  <!-- Email -->
+  <g transform="translate(412, 119)">
+    <path d="M14.29 3H2.71C1.77 3 1 3.77 1 4.71v7.57C1 13.23 1.77 14 2.71 14h11.57c.95 0 1.71-.77 1.71-1.71V4.71C16 3.77 15.23 3 14.29 3zm0 1.43L8.5 8.86 2.71 4.43h11.57zm0 8.57H2.71V5.86l5.79 4.43 5.79-4.43v7.14z" fill="#e8b36a" transform="scale(0.75)"/>
+    <text x="16" y="8" font-size="8" font-weight="400" fill="rgba(255,255,255,0.75)">info@timelessrelocation.com</text>
+  </g>
+
+  <!-- Location -->
+  <g transform="translate(412, 136)">
+    <path d="M8.5 1C5.46 1 3 3.46 3 6.5 3 10.88 8.5 16 8.5 16s5.5-5.12 5.5-9.5C14 3.46 11.54 1 8.5 1zm0 7.5c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z" fill="#e8b36a" transform="scale(0.75)"/>
+    <text x="16" y="8" font-size="8" font-weight="400" fill="rgba(255,255,255,0.75)">Bur Dubai, Dubai, UAE</text>
+  </g>
+
+  <!-- Hours -->
+  <g transform="translate(412, 153)">
+    <path d="M8.5 1C4.36 1 1 4.36 1 8.5S4.36 16 8.5 16 16 12.64 16 8.5 12.64 1 8.5 1zm0 13.5C5.19 14.5 2.5 11.81 2.5 8.5S5.19 2.5 8.5 2.5 14.5 5.19 14.5 8.5 11.81 14.5 8.5 14.5zm.54-9.25H7.75v4.29l3.75 2.25.54-.88-3.21-1.91V5.25z" fill="#e8b36a" transform="scale(0.75)"/>
+    <text x="16" y="8" font-size="8" font-weight="400" fill="rgba(255,255,255,0.75)">Mon – Sat · 8:00 AM – 6:00 PM</text>
+  </g>
+
+  <!-- Website -->
+  <g transform="translate(412, 170)">
+    <path d="M8.5 1C4.36 1 1 4.36 1 8.5S4.36 16 8.5 16 16 12.64 16 8.5 12.64 1 8.5 1zm5.95 4.5h-2.53a11.8 11.8 0 00-1.04-2.68A6.52 6.52 0 0114.45 5.5zM8.5 2.54c.48.77.87 1.6 1.15 2.46H7.35c.28-.87.67-1.7 1.15-2.46zM2.7 9.5A6.3 6.3 0 012.5 8.5c0-.34.08-.67.2-1h2.92c-.07.33-.12.66-.12 1s.05.67.12 1H2.7zm.87 1.5h2.53c.24.95.58 1.85 1.04 2.68A6.52 6.52 0 013.57 11zm2.53-6H3.57a6.52 6.52 0 013.57-2.68A11.8 11.8 0 006.1 5zM8.5 14.46c-.48-.77-.87-1.6-1.15-2.46h2.3c-.28.87-.67 1.7-1.15 2.46zM9.96 11H7.04a10.5 10.5 0 01-.14-1c0-.34.05-.67.14-1h2.92c.09.33.14.66.14 1s-.05.68-.14 1zm.22 2.68c.46-.83.8-1.73 1.04-2.68h2.53a6.52 6.52 0 01-3.57 2.68zM11.5 9.5c.07-.33.12-.66.12-1s-.05-.67-.12-1h2.8c.12.33.2.66.2 1s-.08.67-.2 1h-2.8z" fill="#e8b36a" transform="scale(0.75)"/>
+    <text x="16" y="8" font-size="8" font-weight="400" fill="rgba(255,255,255,0.75)">timelessrelocation.com</text>
+  </g>
+
+  <!-- Watermark -->
+  <image href="../sample-2/Timeless_Logo.png" x="670" y="155" width="50" height="35" preserveAspectRatio="xMidYMid meet" opacity="0.06" style="filter:brightness(3)"/>
+
+  <!-- Label -->
+  <text x="560" y="220" text-anchor="middle" font-size="10" font-weight="500" fill="#9ca3af">Back</text>
+
+  <!-- Title -->
+  <text x="370" y="260" text-anchor="middle" font-size="11" font-weight="600" fill="#0f2b46" letter-spacing="2">VARIATION 2 — CLEAN WHITE</text>
+  <text x="370" y="278" text-anchor="middle" font-size="8" font-weight="400" fill="#9ca3af">90 x 50 mm · 350gsm · Matte / Soft-touch lamination</text>
+</svg>

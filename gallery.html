@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | Timeless Relocation - Professional Movers in Dubai</title>
+    <meta name="description" content="Browse our gallery of professional moving and relocation projects across Dubai and UAE. See Timeless Relocation's expert team in action.">
+    <link rel="canonical" href="https://www.timelessrelocation.com/gallery.html">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Gallery | Timeless Relocation - Professional Movers in Dubai">
+    <meta property="og:description" content="Browse our gallery of professional moving and relocation projects across Dubai and UAE. See Timeless Relocation's expert team in action.">
+    <meta property="og:image" content="https://www.timelessrelocation.com/images/gallery/Gallery_images%20(1).jpeg">
+    <meta property="og:url" content="https://www.timelessrelocation.com/gallery.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Timeless Relocation">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Gallery | Timeless Relocation - Professional Movers in Dubai">
+    <meta name="twitter:description" content="Browse our gallery of professional moving and relocation projects across Dubai and UAE. See Timeless Relocation's expert team in action.">
+    <meta name="twitter:image" content="https://www.timelessrelocation.com/images/gallery/Gallery_images%20(1).jpeg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/Timeless_Logo.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css?v=2.0">
+
+    <!-- JSON-LD: BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.timelessrelocation.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Gallery",
+          "item": "https://www.timelessrelocation.com/gallery.html"
+        }
+      ]
+    }
+    </script>
+
+    <!-- Gallery Lightbox Styles -->
+    <style>
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            padding: 0;
+        }
+        .gallery-item {
+            cursor: pointer;
+            overflow: hidden;
+            border-radius: 12px;
+            aspect-ratio: 4 / 3;
+            position: relative;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.35s ease;
+            display: block;
+        }
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Lightbox */
+        .lightbox-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            background: rgba(0, 0, 0, 0.92);
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .lightbox-overlay.active {
+            display: flex;
+        }
+        .lightbox-img {
+            max-width: 90vw;
+            max-height: 85vh;
+            border-radius: 8px;
+            object-fit: contain;
+            user-select: none;
+        }
+        .lightbox-close {
+            position: fixed;
+            top: 20px;
+            right: 24px;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 36px;
+            cursor: pointer;
+            z-index: 10001;
+            line-height: 1;
+            padding: 8px;
+            opacity: 0.85;
+            transition: opacity 0.2s;
+        }
+        .lightbox-close:hover { opacity: 1; }
+        .lightbox-prev,
+        .lightbox-next {
+            position: fixed;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255,255,255,0.12);
+            border: none;
+            color: #fff;
+            font-size: 28px;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 10001;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+        }
+        .lightbox-prev:hover,
+        .lightbox-next:hover {
+            background: rgba(255,255,255,0.25);
+        }
+        .lightbox-prev { left: 20px; }
+        .lightbox-next { right: 20px; }
+
+        @media (max-width: 900px) {
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+            }
+        }
+        @media (max-width: 576px) {
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+            .lightbox-prev,
+            .lightbox-next {
+                width: 40px;
+                height: 40px;
+                font-size: 22px;
+            }
+            .lightbox-prev { left: 10px; }
+            .lightbox-next { right: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ========== TOPBAR ========== -->
+    <div class="topbar" role="banner">
+        <div class="topbar-inner container">
+            <div class="topbar-marquee" aria-label="Announcements">
+                <div class="topbar-track">
+                    <span>Professional Movers and Packers in Dubai</span>
+                    <span>Licensed and Certified Moving Company</span>
+                    <span>Serving All 7 Emirates Across the UAE</span>
+                    <span>Affordable Rates - No Hidden Fees</span>
+                    <span>Professional Movers and Packers in Dubai</span>
+                    <span>Licensed and Certified Moving Company</span>
+                    <span>Serving All 7 Emirates Across the UAE</span>
+                    <span>Affordable Rates - No Hidden Fees</span>
+                </div>
+            </div>
+            <div class="topbar-right">
+                <a href="tel:+971568654794" aria-label="Call us">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    +971 56 865 4794
+                </a>
+                <a href="mailto:info@timelessrelocation.com" aria-label="Email us">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                    info@timelessrelocation.com
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== NAVBAR ========== -->
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="nav-inner container">
+            <a href="index.html" class="nav-logo" aria-label="Timeless Relocation Home">
+                <img src="images/Timeless_Logo.png" alt="Timeless Relocation Logo" width="160" height="40">
+            </a>
+
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <div class="nav-dropdown">
+                    <button class="nav-link" aria-haspopup="true" aria-expanded="false">
+                        Services
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="dropdown-panel" role="menu">
+                        <a href="services/movers-and-packers.html" role="menuitem">Movers and Packers</a>
+                        <a href="services/house-movers.html" role="menuitem">House Movers</a>
+                        <a href="services/villa-movers.html" role="menuitem">Villa Movers</a>
+                        <a href="services/commercial-relocation.html" role="menuitem">Commercial Relocation</a>
+                        <a href="services/storage-services.html" role="menuitem">Storage Services</a>
+                        <a href="services/international-relocation.html" role="menuitem">International Relocation</a>
+                    </div>
+                </div>
+                <a href="gallery.html" class="nav-link active" aria-current="page">Gallery</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+
+            <a href="contact.html" class="btn btn--primary nav-cta">Get Free Quote</a>
+
+            <button class="hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ========== MOBILE BACKDROP ========== -->
+    <div class="mobile-backdrop" aria-hidden="true"></div>
+
+    <!-- ========== MOBILE DRAWER ========== -->
+    <aside class="mobile-drawer" role="dialog" aria-label="Mobile navigation">
+        <div class="mobile-header">
+            <img src="images/Timeless_Logo.png" alt="Timeless Relocation" width="160" height="66" style="object-fit: contain;">
+            <button class="mobile-close" aria-label="Close menu">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </button>
+        </div>
+        <nav class="mobile-nav">
+            <a href="index.html" class="mobile-link">Home</a>
+            <a href="about.html" class="mobile-link">About</a>
+            <button class="mobile-link mobile-dd-toggle" aria-expanded="false">
+                Services
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="mobile-dd-list">
+                <a href="services/movers-and-packers.html">Movers and Packers</a>
+                <a href="services/house-movers.html">House Movers</a>
+                <a href="services/villa-movers.html">Villa Movers</a>
+                <a href="services/commercial-relocation.html">Commercial Relocation</a>
+                <a href="services/storage-services.html">Storage Services</a>
+                <a href="services/international-relocation.html">International Relocation</a>
+            </div>
+            <a href="gallery.html" class="mobile-link active">Gallery</a>
+            <a href="contact.html" class="mobile-link">Contact</a>
+        </nav>
+        <a href="contact.html" class="btn btn--primary mobile-cta">Get Free Quote</a>
+    </aside>
+
+    <!-- ========== PAGE HERO ========== -->
+    <section class="page-hero">
+        <div class="container">
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+                <a href="index.html">Home</a>
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+                <span aria-current="page">Gallery</span>
+            </nav>
+            <h1>Our Gallery</h1>
+        </div>
+    </section>
+
+    <!-- ========== GALLERY SECTION ========== -->
+    <section style="padding: 2rem 0 4rem;" aria-labelledby="gallery-heading">
+        <div class="container">
+            <h2 id="gallery-heading" class="sr-only">Photo Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" data-index="0"><img src="images/gallery/Gallery_images (1).jpeg" alt="Timeless Relocation - Professional moving service in Dubai" loading="lazy" width="600" height="450"></div>
+                <div class="gallery-item" data-index="1"><img src="images/gallery/Gallery_images (2).jpeg" alt="Timeless Relocation - Professional moving service in Dubai" loading="lazy" width="600" height="450"></div>
+                <div class="gallery-item" data-index="2"><img src="images/gallery/Gallery_images (3).jpeg" alt="Timeless Relocation - Professional moving service in Dubai" loading="lazy" width="600" height="450"></div>
+                <div class="gallery-item" data-index="3"><img src="images/gallery/Gallery_images (4).jpeg" alt="Timeless Relocation - Professional moving service in Dubai" loading="lazy" width="600" height="450"></div>
+                <div class="gallery-item" data-index="4"><img src="images/gallery/Gallery_images (5).jpeg" alt="Timeless Relocation - Professional moving service in Dubai" loading="lazy" width="600" height="450"></div>
+                <div class="gallery-item" data-index="5"><img src="images/gallery/Gallery_images (6).jpeg" alt="Timeless Relocation - Professional moving service in Dubai" loading="lazy" width="600" height="450"></div>
+                <div class="gallery-item" data-index="6"><img src="images/gallery/Gallery_images (7).jpeg" alt="Timeless Relocation - Professional moving service in Dubai" loading="lazy" width="600" height="450"></div>
+                <div class="gallery-item" data-index="7"><img src="images/gallery/Gallery_images (8).jpeg" alt="Timeless Relocation - Professional moving service in Dubai" loading="lazy" width="600" height="450"></div>
+                <div class="gallery-item" data-index="8"><img src="images/gallery/Gallery_images (9).jpeg" alt="Timeless Relocation - Professional moving service in Dubai" loading="lazy" width="600" height="450"></div>
+                <div class="gallery-item" data-index="9"><img src="images/gallery/Gallery_images (10).jpeg" alt="Timeless Relocation - Professional moving service in Dubai" loading="lazy" width="600" height="450"></div>
+                <div class="gallery-item" data-index="10"><img src="images/gallery/Gallery_images (11).jpeg" alt="Timeless Relocation - Professional moving service in Dubai" loading="lazy" width="600" height="450"></div>
+                <div class="gallery-item" data-index="11"><img src="images/gallery/Gallery_images (12).jpeg" alt="Timeless Relocation - Professional moving service in Dubai" loading="lazy" width="600" height="450"></div>
+                <div class="gallery-item" data-index="12"><img src="images/gallery/Gallery_images (13).jpeg" alt="Timeless Relocation - Professional moving service in Dubai" loading="lazy" width="600" height="450"></div>
+                <div class="gallery-item" data-index="13"><img src="images/gallery/Gallery_images (14).jpeg" alt="Timeless Relocation - Professional moving service in Dubai" loading="lazy" width="600" height="450"></div>
+                <div class="gallery-item" data-index="14"><img src="images/gallery/Gallery_images (15).jpeg" alt="Timeless Relocation - Professional moving service in Dubai" loading="lazy" width="600" height="450"></div>
+                <div class="gallery-item" data-index="15"><img src="images/gallery/Gallery_images (16).jpeg" alt="Timeless Relocation - Professional moving service in Dubai" loading="lazy" width="600" height="450"></div>
+                <div class="gallery-item" data-index="16"><img src="images/gallery/Gallery_images (17).jpeg" alt="Timeless Relocation - Professional moving service in Dubai" loading="lazy" width="600" height="450"></div>
+                <div class="gallery-item" data-index="17"><img src="images/gallery/Gallery_images (18).jpeg" alt="Timeless Relocation - Professional moving service in Dubai" loading="lazy" width="600" height="450"></div>
+                <div class="gallery-item" data-index="18"><img src="images/gallery/Gallery_images (19).jpeg" alt="Timeless Relocation - Professional moving service in Dubai" loading="lazy" width="600" height="450"></div>
+                <div class="gallery-item" data-index="19"><img src="images/gallery/Gallery_images (20).jpeg" alt="Timeless Relocation - Professional moving service in Dubai" loading="lazy" width="600" height="450"></div>
+                <div class="gallery-item" data-index="20"><img src="images/gallery/Gallery_images (21).jpeg" alt="Timeless Relocation - Professional moving service in Dubai" loading="lazy" width="600" height="450"></div>
+                <div class="gallery-item" data-index="21"><img src="images/gallery/Gallery_images (22).jpeg" alt="Timeless Relocation - Professional moving service in Dubai" loading="lazy" width="600" height="450"></div>
+                <div class="gallery-item" data-index="22"><img src="images/gallery/Gallery_images (23).jpeg" alt="Timeless Relocation - Professional moving service in Dubai" loading="lazy" width="600" height="450"></div>
+                <div class="gallery-item" data-index="23"><img src="images/gallery/Gallery_images (24).jpeg" alt="Timeless Relocation - Professional moving service in Dubai" loading="lazy" width="600" height="450"></div>
+                <div class="gallery-item" data-index="24"><img src="images/gallery/Gallery_images (25).jpeg" alt="Timeless Relocation - Professional moving service in Dubai" loading="lazy" width="600" height="450"></div>
+                <div class="gallery-item" data-index="25"><img src="images/gallery/Gallery_images (26).jpeg" alt="Timeless Relocation - Professional moving service in Dubai" loading="lazy" width="600" height="450"></div>
+                <div class="gallery-item" data-index="26"><img src="images/gallery/Gallery_images (27).jpeg" alt="Timeless Relocation - Professional moving service in Dubai" loading="lazy" width="600" height="450"></div>
+                <div class="gallery-item" data-index="27"><img src="images/gallery/Gallery_images (28).jpeg" alt="Timeless Relocation - Professional moving service in Dubai" loading="lazy" width="600" height="450"></div>
+                <div class="gallery-item" data-index="28"><img src="images/gallery/Gallery_images (29).jpeg" alt="Timeless Relocation - Professional moving service in Dubai" loading="lazy" width="600" height="450"></div>
+                <div class="gallery-item" data-index="29"><img src="images/gallery/Gallery_images (30).jpeg" alt="Timeless Relocation - Professional moving service in Dubai" loading="lazy" width="600" height="450"></div>
+                <div class="gallery-item" data-index="30"><img src="images/gallery/Gallery_images (31).jpeg" alt="Timeless Relocation - Professional moving service in Dubai" loading="lazy" width="600" height="450"></div>
+                <div class="gallery-item" data-index="31"><img src="images/gallery/Gallery_images (32).jpeg" alt="Timeless Relocation - Professional moving service in Dubai" loading="lazy" width="600" height="450"></div>
+                <div class="gallery-item" data-index="32"><img src="images/gallery/Gallery_images (33).jpeg" alt="Timeless Relocation - Professional moving service in Dubai" loading="lazy" width="600" height="450"></div>
+                <div class="gallery-item" data-index="33"><img src="images/gallery/Gallery_images (34).jpeg" alt="Timeless Relocation - Professional moving service in Dubai" loading="lazy" width="600" height="450"></div>
+                <div class="gallery-item" data-index="34"><img src="images/gallery/Gallery_images (35).jpeg" alt="Timeless Relocation - Professional moving service in Dubai" loading="lazy" width="600" height="450"></div>
+                <div class="gallery-item" data-index="35"><img src="images/gallery/Gallery_images (36).jpeg" alt="Timeless Relocation - Professional moving service in Dubai" loading="lazy" width="600" height="450"></div>
+                <div class="gallery-item" data-index="36"><img src="images/gallery/Gallery_images (37).jpeg" alt="Timeless Relocation - Professional moving service in Dubai" loading="lazy" width="600" height="450"></div>
+                <div class="gallery-item" data-index="37"><img src="images/gallery/Gallery_images (38).jpeg" alt="Timeless Relocation - Professional moving service in Dubai" loading="lazy" width="600" height="450"></div>
+                <div class="gallery-item" data-index="38"><img src="images/gallery/Gallery_images (39).jpeg" alt="Timeless Relocation - Professional moving service in Dubai" loading="lazy" width="600" height="450"></div>
+                <div class="gallery-item" data-index="39"><img src="images/gallery/Gallery_images (40).jpeg" alt="Timeless Relocation - Professional moving service in Dubai" loading="lazy" width="600" height="450"></div>
+                <div class="gallery-item" data-index="40"><img src="images/gallery/Gallery_images (41).jpeg" alt="Timeless Relocation - Professional moving service in Dubai" loading="lazy" width="600" height="450"></div>
+                <div class="gallery-item" data-index="41"><img src="images/gallery/Gallery_images (42).jpeg" alt="Timeless Relocation - Professional moving service in Dubai" loading="lazy" width="600" height="450"></div>
+                <div class="gallery-item" data-index="42"><img src="images/gallery/Gallery_images (43).jpeg" alt="Timeless Relocation - Professional moving service in Dubai" loading="lazy" width="600" height="450"></div>
+                <div class="gallery-item" data-index="43"><img src="images/gallery/Gallery_images (44).jpeg" alt="Timeless Relocation - Professional moving service in Dubai" loading="lazy" width="600" height="450"></div>
+                <div class="gallery-item" data-index="44"><img src="images/gallery/Gallery_images (45).jpeg" alt="Timeless Relocation - Professional moving service in Dubai" loading="lazy" width="600" height="450"></div>
+                <div class="gallery-item" data-index="45"><img src="images/gallery/Gallery_images (46).jpeg" alt="Timeless Relocation - Professional moving service in Dubai" loading="lazy" width="600" height="450"></div>
+                <div class="gallery-item" data-index="46"><img src="images/gallery/Gallery_images (47).jpeg" alt="Timeless Relocation - Professional moving service in Dubai" loading="lazy" width="600" height="450"></div>
+                <div class="gallery-item" data-index="47"><img src="images/gallery/Gallery_images (48).jpeg" alt="Timeless Relocation - Professional moving service in Dubai" loading="lazy" width="600" height="450"></div>
+                <div class="gallery-item" data-index="48"><img src="images/gallery/Gallery_images (49).jpeg" alt="Timeless Relocation - Professional moving service in Dubai" loading="lazy" width="600" height="450"></div>
+                <div class="gallery-item" data-index="49"><img src="images/gallery/Gallery_images (50).jpeg" alt="Timeless Relocation - Professional moving service in Dubai" loading="lazy" width="600" height="450"></div>
+                <div class="gallery-item" data-index="50"><img src="images/gallery/Gallery_images (51).jpeg" alt="Timeless Relocation - Professional moving service in Dubai" loading="lazy" width="600" height="450"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== LIGHTBOX ========== -->
+    <div class="lightbox-overlay" id="lightbox" aria-hidden="true" role="dialog" aria-label="Image lightbox">
+        <button class="lightbox-close" aria-label="Close lightbox">&times;</button>
+        <button class="lightbox-prev" aria-label="Previous image">&#10094;</button>
+        <img class="lightbox-img" id="lightbox-img" src="" alt="">
+        <button class="lightbox-next" aria-label="Next image">&#10095;</button>
+    </div>
+
+    <!-- ========== CTA BANNER ========== -->
+    <section class="cta-banner reveal" aria-labelledby="cta-heading">
+        <div class="container text-center">
+            <h2 id="cta-heading">Ready to Make Your Move?</h2>
+            <p>Get a free quote from our expert team and experience a stress-free relocation.</p>
+            <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+                <a href="contact.html" class="btn btn--white">Request a Free Quote</a>
+                <a href="https://wa.me/971568654794" class="btn btn--whatsapp" target="_blank" rel="noopener noreferrer">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                    WhatsApp Us
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" aria-label="Timeless Relocation Home">
+          <img src="images/Timeless_Logo.png" alt="Timeless Relocation" width="140" height="42">
+        </a>
+        <p>Your trusted moving partner in Dubai and across the UAE. Professional, affordable, and reliable relocation services.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+          <a href="#" aria-label="X"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Our Services</h4>
+        <ul>
+          <li><a href="services/movers-and-packers.html">Movers and Packers</a></li>
+          <li><a href="services/house-movers.html">House Movers</a></li>
+          <li><a href="services/villa-movers.html">Villa Movers</a></li>
+          <li><a href="services/commercial-relocation.html">Commercial Relocation</a></li>
+          <li><a href="services/storage-services.html">Storage Services</a></li>
+          <li><a href="services/international-relocation.html">International Relocation</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <div class="footer-contact-row">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+          <a href="tel:+971568654794">+971 56 865 4794</a>
+        </div>
+        <div class="footer-contact-row">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          <a href="mailto:info@timelessrelocation.com">info@timelessrelocation.com</a>
+        </div>
+        <div class="footer-contact-row">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          <span>Dubai, United Arab Emirates</span>
+        </div>
+        <div class="footer-contact-row">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          <span>Mon-Sat 8AM-6PM</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Timeless Relocation. All rights reserved.</p>
+      <p style="margin-top:6px;font-size:0.75rem;">Powered by <a href="mailto:hello@quartermasters.me" style="color:#d4943a;font-weight:600;">Quartermasters FZC</a></p>
+    </div>
+  </div>
+</footer>
+
+    <!-- ========== WHATSAPP FLOAT ========== -->
+    <div class="wa-float"><a href="https://wa.me/971568654794" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp">
+        <span class="wa-ring"></span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        <span class="wa-tip">Chat with us!</span>
+    </a></div>
+
+    <!-- JS -->
+    <script src="js/main.js" defer></script>
+
+    <!-- Gallery Lightbox Script -->
+    <script>
+    (function() {
+        const overlay = document.getElementById('lightbox');
+        const lbImg = document.getElementById('lightbox-img');
+        const items = document.querySelectorAll('.gallery-item');
+        const totalImages = items.length;
+        let currentIndex = 0;
+
+        function openLightbox(index) {
+            currentIndex = index;
+            const img = items[index].querySelector('img');
+            lbImg.src = img.src;
+            lbImg.alt = img.alt;
+            overlay.classList.add('active');
+            overlay.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            overlay.classList.remove('active');
+            overlay.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = '';
+            lbImg.src = '';
+        }
+
+        function showPrev() {
+            currentIndex = (currentIndex - 1 + totalImages) % totalImages;
+            const img = items[currentIndex].querySelector('img');
+            lbImg.src = img.src;
+            lbImg.alt = img.alt;
+        }
+
+        function showNext() {
+            currentIndex = (currentIndex + 1) % totalImages;
+            const img = items[currentIndex].querySelector('img');
+            lbImg.src = img.src;
+            lbImg.alt = img.alt;
+        }
+
+        items.forEach(function(item) {
+            item.addEventListener('click', function() {
+                openLightbox(parseInt(this.getAttribute('data-index'), 10));
+            });
+        });
+
+        overlay.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
+
+        overlay.querySelector('.lightbox-prev').addEventListener('click', function(e) {
+            e.stopPropagation();
+            showPrev();
+        });
+        overlay.querySelector('.lightbox-next').addEventListener('click', function(e) {
+            e.stopPropagation();
+            showNext();
+        });
+
+        overlay.addEventListener('click', function(e) {
+            if (e.target === overlay) closeLightbox();
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (!overlay.classList.contains('active')) return;
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') showPrev();
+            if (e.key === 'ArrowRight') showNext();
+        });
+    })();
+    </script>
+</body>
+</html>

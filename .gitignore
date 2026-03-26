@@ -1,0 +1,12 @@
+# Sensitive / payment files
+addon-Deliverables/Payment/
+addon-Deliverables/Quotation/
+
+# Internal dev files
+.claude/
+docs/
+
+# Temp files
+*.tmp
+.DS_Store
+Thumbs.db
